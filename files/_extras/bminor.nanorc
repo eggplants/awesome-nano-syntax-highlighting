@@ -1,0 +1,26 @@
+# Source: https://github.com/Nuolong/bminor-nano-syntax-highlighting/blob/030392964e8bcfa7f192668734f57b410c472a77/bminor.nanorc
+# License: NOASSERTION (no license found upstream)
+
+## Syntax highlighting for B-Minor
+
+syntax "bminor" "\.bminor$"
+
+# Indentifiers
+color brightwhite "(_|[a-zA-Z])(_|[a-zA-Z]|[0-9])*"
+
+# Type
+color brightred "\<(function)\>"
+color brightgreen "\<(array|boolean|char|integer|string)\>"
+color brightyellow "\<(for|while|if|else|return|print)\>"
+color yellow "\<(true|false)\>"
+
+# String/Char Literals
+color brightblue ""([^"]|\\")*"" "#[[:space:]]*include[[:space:]]+<[^[:blank:]=]*>"
+color brightmagenta "'([^'\]|\\.)*'|'''"
+
+# Comments
+color cyan "//.*"
+color cyan start="/\*" end="\*/"
+
+# Trailing Whitespace.
+color ,green "[[:space:]]+$"

@@ -1,0 +1,15 @@
+# Source: https://github.com/mikelietz/feature.nanorc/blob/823ccabec21c0c91f7e32c0d1cdc3984a59bbdcc/feature.nanorc
+# License: NOASSERTION (no license found upstream)
+
+## Highlighting syntax for gherkin feature files
+##
+##"\|[[:space:]]*.*[[:space:]]*\|"
+
+syntax "feature" "\.feature$"
+icolor green "^[[:space:]]*(given|when|and|then).*\>"
+icolor green start="\|" end="\|"
+color brightgreen ""[^"]*""
+color green "[[:space:]]+$"
+color brightcyan "^[[:space:]]*@.*"
+color brightblack "[[:space:]]*#.*"
+color white "\|"

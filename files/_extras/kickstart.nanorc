@@ -1,0 +1,18 @@
+# Source: https://github.com/galenguyer/nano-syntax-highlighting/blob/6f7cb16bf238fa5c55995377ec9d1d3fa9b9515f/kickstart.nanorc
+# License: GPL-3.0-or-later
+
+syntax "KickStart" "\.ks$" "\.kickstart$"
+
+color brightmagenta  "%[a-z]+"
+color cyan  "^[[:space:]]*(install|cdrom|text|graphical|volgroup|logvol|reboot|timezone|lang|keyboard|authconfig|firstboot|rootpw|user|firewall|selinux|repo|part|partition|clearpart|bootloader)"
+color cyan  "--(name|mirrorlist|baseurl|utc)(=|\>)"
+color brightyellow "\$(releasever|basearch)\>"
+
+# Packages and groups
+color brightblack "^@[A-Za-z][A-Za-z-]*"
+color brightred   "^-@[a-zA-Z0-9*-]+"
+color red         "^-[a-zA-Z0-9*-]+"
+
+color brightblack "(^|[[:space:]])#([^{].*)?$"
+color ,green "[[:space:]]+$"
+color ,red "	+ +| +	+"

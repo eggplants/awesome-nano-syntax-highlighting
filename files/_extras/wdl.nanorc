@@ -1,0 +1,24 @@
+# Source: https://github.com/Selonka/wdl_nanorc/blob/3da337cfbe0e2842b7e11c7b5c57de6e524852c1/wdl.nanorc
+# License: NOASSERTION (no license found upstream)
+
+# Here is an example for wdl shell scripts.
+
+syntax "wdl" "\.wdl$"
+## wdl task
+color blue start="\<(task|command|runtime|output)\>.*$" end="runtime"
+color brightred "\<(task|command|runtime|output)\>.*$"
+color brightyellow "\<(task|command|runtime|output)\>"
+## wdl call
+color blue start="\<(input)\>.*$" end="\}"
+color brightred "\<(call|scatter)\>.*$"
+color brightyellow "\<(call|scatter)\>"
+icolor white "[\{|\}]"
+## wdl variables
+icolor brightgreen "\<(Array|File|Int|String|Float|Float?)\>.*$"
+color brightblue  "\<(Array|File|Int|String|Float|Float?)\>"
+color yellow "<[^=        ]*>" ""(\\.|[^"])*""
+color green start="\$\{" end="\}"
+color magenta start="<<<" end=">>>"
+## wdl comments
+icolor cyan "^[[:space:]]*#.*$"
+icolor cyan "^[[:space:]]*##.*$"

@@ -1,0 +1,38 @@
+# Source: https://github.com/remisalmon/nanorc/blob/8be7973f1acdcbdfdda88f0cb9cb91a19e84954f/lookml.nanorc
+# License: NOASSERTION (no license found upstream)
+
+# Syntax highlighting for LookML files.
+
+syntax lookml "\.l(oo)?kml$"
+
+comment "# "
+
+tabgives "  "
+
+# Numbers and constants.
+icolor yellow "\<[+-]?[0-9]+(\.[0-9]*)?(e[+-]?[0-9]+)?\>"
+
+color yellow "\<(yes|no)\>"
+
+# Variables.
+color magenta "\$\{[^}]*\}"
+
+# SQL.
+color red ";;"
+
+# Strings.
+color green ""([^"\]|\\.)*""
+color green "'([^'\]|\\.)*'"
+
+# Multiline strings.
+icolor green start="^ *([0-9a-z_]+ *: *)?"([^"\]|\\.)*$" end="^([^"\]|\\.)*""
+
+# Keywords.
+icolor blue "^ *(- +)?[0-9a-z_]+ *:"
+
+# Comments.
+color red "^ *#.*$"
+color red "#("([^"\]|\\.)*"|'([^'\]|\\.)*'|[^"'])*$"
+
+# Trailing whitespaces.
+color ,green " +$"

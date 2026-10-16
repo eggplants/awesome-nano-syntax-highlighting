@@ -1,0 +1,22 @@
+# Source: https://github.com/jxpx666/blackbox-syntax-highlight/blob/8b4eef798defdd97537613ec472ee91cae5ba17d/nano-syntax-highlight/syntaxes/desktop.nanorc
+# License: MIT
+
+syntax "Desktop" ".desktop"
+
+# Header
+color green "\[Desktop Entry]"
+
+# Standard Keys
+color white "\Version|\GenericName|\NoDisplay|\Comment|\Icon|\Hidden|\OnlyShowIn|\NotShowIn|\DBusActivatable|\TryExec|\Exec|\Path|\Terminal|\Actions|\Categories|\Implements|\Keywords|\StartupNotify|\StartupWMClass|\PrefersNonDefaultGPU|\SingleMainWindow|\Encoding"
+
+# Required Keys
+color bold,white "\Type|\MimeType|\Name|\Exec|\URL"
+
+# Exec Key
+color blue "\%f|\%F|\%u|\%U|\%d|\%D|\%n|\%N|\%i|\%c|\%k|\%v|\%m"
+
+# Encoding
+color blue "\ARMSCII-8|\BIG5|\CP1251|\EUC-CN|\EUC-JP|\EUC-KR|\GEORGIAN-ACADEMY|\GEORGIAN-PS|\ISO-8859-1|\ISO-8859-2|\ISO-8859-3|\ISO-8859-5|\ISO-8859-7|\ISO-8859-9|\ISO-8859-13|\ISO-8859-14|\ISO-8859-15|\KOI8-R|\KOI8-U|\TCVN-5712 (*)|\TIS-620|\VISCII|\UTF-8"
+
+# Signals
+color red "\="

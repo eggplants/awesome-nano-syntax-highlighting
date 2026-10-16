@@ -1,0 +1,11 @@
+# Source: https://github.com/Naereen/nanorc/blob/09fb9c0ba134b64250c8db7145c5097abb53ec43/mgp.nanorc
+# License: MIT
+
+## Here is an example for Magicpoint presentations
+##
+syntax "mgp" "\.mgp$"
+header "^%include.*"
+icolor green "^%[a-z].*$"
+color cyan "(^|[[:space:]])#.*$"
+color cyan "(^|[[:space:]])%%.*$"
+color ,green "[[:space:]]+$"

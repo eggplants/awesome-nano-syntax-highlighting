@@ -1,0 +1,22 @@
+# Source: https://github.com/galenguyer/nano-syntax-highlighting/blob/6f7cb16bf238fa5c55995377ec9d1d3fa9b9515f/haml.nanorc
+# License: GPL-3.0-or-later
+
+syntax "Haml" "\.haml$"
+
+color cyan   "-|="
+color white "->|=>"
+icolor cyan "([  ]|^)%[0-9A-Z_]+\>"
+icolor magenta ":[0-9A-Z_]+\>"
+icolor yellow "\.[A-Z_]+\>"
+## Double quote & single quote
+color green ""([^"]|(\\"))*"" "%[QW]?\{[^}]*\}" "%[QW]?\([^)]*\)" "%[QW]?<[^>]*>" "%[QW]?\$[^$]*\$" "%[QW]?\^[^^]*\^" "%[QW]?![^!]*!"
+color green "'([^']|(\\'))*'" "%[qw]\{[^}]*\}" "%[qw]\([^)]*\)" "%[qw]<[^>]*>" "%[qw]\[[^]]*\]" "%[qw]\$[^$]*\$" "%[qw]\^[^^]*\^" "%[qw]![^!]*!"
+## Vars
+color brightgreen  "#\{[^}]*\}"
+color brightblue "(@|@@)[0-9A-Z_a-z]+"
+## Comments
+color brightcyan "#[^{].*$" "#$"
+color brightwhite,yellow "\<(FIXME|TODO|XXX)\>"
+
+## Trailing spaces
+color ,green "[[:space:]]+$"

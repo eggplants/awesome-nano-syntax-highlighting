@@ -1,0 +1,49 @@
+# Source: https://github.com/aaron-dotnet/nanorc-extras/blob/f14c1b3a2fcf9da91fca9d363624392d4bae7437/csharp.nanorc
+# License: NOASSERTION (no license found upstream)
+
+syntax "C#" "\.cs$"
+comment "//"
+
+# Keywords
+color red "\<(async|await|if|else|switch|case|do|for|foreach|in|while|break|continue|default|goto|return|yield|throw|try|catch|finally)\>"
+color cyan "\<(namespace|global|using|extern|alias|public|protected|internal|private|ref|const|lock|event|new|override|readonly|static|unsafe|virtual|volatile|abstract|partial|sealed|required)\>"
+
+# Data Types
+color green "\<(bool|s?byte|char|decimal|double|float|u?int|u?long|u?short|nint|nuint|class|struct|delegate|object|string|record|void|var|enum)\>"
+
+# Patterns
+color brightgreen "\<(and|or|not|is|when|with)\>"
+
+# Generics
+color brightmagenta "<[[:alnum:]_?]+>"
+
+# Literal
+color brightyellow "\<(true|false|null)\>"
+color brightyellow "\<[0-9]+\>"
+icolor brightyellow "\<0x[[:xdigit:]]+\>"
+icolor brightyellow "\<0b[01]+\>"
+icolor brightyellow "\<[0-9]*\.[0-9]+([eE][0-9]+)?\>"
+
+# Strings & Chars
+color red start="\"\"\"" end="\"\"\""
+color red "\"(\\.|[^\\\"])*\""
+color brightred "u8\"(\\.|[^\\\"])*\""
+color brightred "'(\\.|[^\\'])*'"
+
+# Attributes
+color brightmagenta start="\[" end="\]"
+
+# get, set, init
+color brightblue "\<(get|set|init)\>"
+
+# Structural symbols
+color brightmagenta "[{}]"
+color brightcyan "[();]"
+
+
+# Comments
+color brightblue "//.*"
+color brightblue start="/\*" end="\*/"
+
+# Spaces at the end
+color ,green "[[:space:]]+$"

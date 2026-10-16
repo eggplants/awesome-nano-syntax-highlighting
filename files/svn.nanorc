@@ -1,0 +1,17 @@
+# Source: https://github.com/galenguyer/nano-syntax-highlighting/blob/6f7cb16bf238fa5c55995377ec9d1d3fa9b9515f/svn.nanorc
+# License: GPL-3.0-or-later
+
+syntax "svn-commit" "svn-commit(\.[[:digit:]]+)?\.tmp$"
+
+# commit message
+color yellow ".*"
+
+# ignore after line EDITOR_EOF_PREFIX (see svn/util.c)
+color brightblack "^--.+--$"
+
+# files changes
+color white       "^[ADM_](M|[[:space:]])[[:space:]](\+|[[:space:]])[[:space:]].*"
+color red         "^D[[:space:]]{4}"
+color green       "^[M_](M|[[:space:]])[[:space:]]{3}"
+color brightgreen "^A(M|[[:space:]])[[:space:]]{3}"
+color brightblue  "^A(M|[[:space:]])[[:space:]]\+[[:space:]]"

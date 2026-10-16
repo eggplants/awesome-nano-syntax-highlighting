@@ -1,0 +1,14 @@
+# Source: https://github.com/AndrewGilchrist/custom_nanorc/blob/06922b0dd0cd3416b4edbd09255cea32dd050c73/ftl.nanorc
+# License: NOASSERTION (no license found upstream)
+
+syntax "ftl" "\.(ftl)$"
+magic "FTL.*document text"
+color green  start="<" end=">"
+color cyan   "<[^> ]+"
+color cyan   ">"
+color yellow start="<!DOCTYPE" end="[/]?>"
+color yellow start="<!--" end="-->"
+color red    "&[^;]*;"
+## strings
+color yellow "['][^']*[^\\][']" "[']{3}.*[^\\][']{3}"
+color yellow "["][^"]*[^\\]["]" "["]{3}.*[^\\]["]{3}"

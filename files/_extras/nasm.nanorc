@@ -1,0 +1,16 @@
+# Source: https://github.com/pazmivaniye/nanorc/blob/834ba5d8c14be9921378a2202e263e2ca4f95fdc/nasm.nanorc
+# License: MIT
+
+syntax "nasm" "\.s$"
+comment ";"
+
+# Reserved words.
+icolor bold,lightwhite "\b(section|global|incbin)\b"
+icolor normal,normal "\$[a-z_.?][a-z0-9_$#@~.?]*\b"
+
+color black,white "[^ -~]"
+
+# Comments.
+color italic,lightblack ";.*"
+
+color ,white "\s+$"

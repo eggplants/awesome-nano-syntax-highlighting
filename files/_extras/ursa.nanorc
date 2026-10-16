@@ -1,0 +1,30 @@
+# Source: https://github.com/ursalang/nanorc-ursa/blob/3b81b82352b3b29319c13a93136b21b810c98972/ursa.nanorc
+# License: MIT
+
+## Syntax highlighting for Ursa.
+
+syntax ursa "\.ursa$"
+header "^#!.*ursa"
+comment "//"
+
+# Reserved words.
+color yellow "\<(and|asm|await|break|class|continue|else|fn|for|gen|if|in|launch|let|loop|not|or|pub|return|static|trait|use|var|yield)\>"
+
+# Octal/decimal and hexadecimal numbers.
+color magenta "\<([0-9]+|0x[[:xdigit:]]+)\>"
+# Special values.
+color magenta "\<(true|false|null)\>"
+
+# Strings.
+color green ""([^"\]|\\.)*""
+## Inaccurate, but it's not possible to balance the number of hashes.
+color green start="r#+"" end=""#+"
+
+# Comments.
+color blue "//.*"
+# (Nested comments do not work.)
+color blue start="/\*" end="\*/"
+color blue "^#!.*"
+
+# Trailing whitespace.
+color ,green "[[:space:]]+$"

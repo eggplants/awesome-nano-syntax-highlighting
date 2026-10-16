@@ -1,0 +1,17 @@
+# Source: https://github.com/serialhex/nano-highlight/blob/d3fdc6a29658503f8b19bff1a0809406859f7f06/todo.nanorc
+# License: Unlicense
+
+syntax "ascii-art-todo" "todo\.txt$"
+
+## [√] Done
+color green "\[√\]"
+
+## [~] In-progress
+color yellow "\[~.*"
+
+## [x] Failed or canceled
+color red "\[x\]"
+
+## [B] Blocked
+color cyan "\[B.*"
+

@@ -1,0 +1,38 @@
+# Source: https://github.com/nyrLang/nyrLang-syntax-nano/blob/aaf551afe02e5dd39d91385bbe6c6860d4440ab7/nyr.nanorc
+# License: Unlicense
+
+syntax "nyr" "\.nyr$"
+comment "//"
+
+# Identifiers
+color brightcyan "[a-zA-Z_][a-zA-Z0-9_]*\s*"
+
+# Parentheses
+color blue "[(){}]" "\[" "\]"
+
+# Types
+color green "\<(u|i)(8|16|32|64)|f(32|64)\>"
+color green "\<(bool|string|char|byte)\>"
+
+# Keywords
+color magenta "\<(def|class|import|struct|let|null)\>"
+color magenta "\<(return|if|else|for|while|do|switch|case|default)\>"
+color brightred "\<(break|continue)\>"
+color brightmagenta "\<(true|false)\>"
+
+# Symbols
+color yellow "[.:,+*|=!%]" "<" ">" "/" "-" "&"
+color brightblack ";"
+
+# Strings
+color magenta start=""" end="""
+
+# Comments
+color brightblack "\s*//.*"
+color brightblack start="\s*/\*" end="\*/"
+
+# shebang
+color brightblack "#\!.*"
+
+# Empty lines with whitespace
+color ,red "\s+$"

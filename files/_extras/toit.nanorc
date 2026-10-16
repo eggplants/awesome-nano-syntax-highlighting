@@ -1,0 +1,26 @@
+# Source: https://github.com/serjan-nasredin/toit.nanorc/blob/9360c40fcc2ad02c9f2fc368699b002625e52748/toit.nanorc
+# License: GPL-3.0
+
+# Toit.nanorc - syntax highlighting for GNU/Nano.
+#
+# Author: snxx <snxx.lppxx@gmail.com>
+# License: GNU GPL v3.0
+# Syntax: www.nano-editor.org/dist/latest/nanorc.5.html
+
+syntax toit "\.toit$"
+
+# Function
+color 
+
+# Keyword
+color brightwhite "(class|if|else|for|import|as|show)"
+color cyan "(true|false|none|null)"
+
+# Meta
+color normal "::=" ":\=" ":" ","
+
+# String: double-quoted
+color red ""
+
+# String: single-quoted
+color red ""

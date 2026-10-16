@@ -1,0 +1,45 @@
+# Source: https://github.com/procedium/sacalon-nanorc/blob/cb5700d2376c82608d99ad83c81d8b13f6beb20a/sacalon.nanorc
+# License: NOASSERTION (no license found upstream)
+
+## Syntax highlighting for Sacalon files.
+
+syntax sacalon "\.sa$"
+comment "//"
+
+# Flow control.
+color yellow "\<(if|else|while|for|in)\>"
+color yellow "\<(and|or|not)\>"
+color magenta "\<(return|continue|break)\>"
+
+# Memory related.
+color yellow "\<(new|delete)\>"
+
+# Types and related keywords.
+color green "\<(static|u?int(8|16|32|64)|int|float|double|string|bool|Function)\>"
+color green "\<(function|var|struct|enum)\>"
+
+# builtins.
+color blue "\<(sizeof|range|len)\>"
+
+# Literals.
+color red "\"([^\"]|\\\")\""
+color red "'([^']|\\')*'"
+color red start="\"\"\"" end="\"\"\""
+color red "\<(NULL|true|false)\>"
+
+# Decorator.
+color white,red "@[A-z0-9_]"
+color cyan "@\<(static_function|extern)\>"
+
+# Use and Cuse.
+color cyan "\<c?use\>"
+
+# Comments.
+color grey "//.*"
+color grey start="/\*" end="\*/"
+
+# Reminders.
+color white,yellow "\<(FIXME|TODO|XXX)\>"
+
+# Trailing whitespace.
+color ,green "[[:space:]]+$"

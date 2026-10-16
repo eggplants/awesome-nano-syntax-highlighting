@@ -1,0 +1,21 @@
+# Source: https://github.com/galenguyer/nano-syntax-highlighting/blob/6f7cb16bf238fa5c55995377ec9d1d3fa9b9515f/vala.nanorc
+# License: GPL-3.0-or-later
+
+syntax "Vala" "\.vala$"
+
+color green     "\<(float|double|bool|char|int|uint|short|long|void|(un)?signed)\>"
+color brightblue "[A-Za-z_][A-Za-z0-9_]*[[:space:]]*[()]"
+color cyan  "\<(for|if|while|do|else|case|default|switch|try|throw|catch)\>"
+color cyan  "\<(inline|typedef|struct|enum|union|extern|static|const)\>"
+color cyan  "\<(operator|new|delete|return|null)\>"
+color cyan  "\<(class|override|private|public|signal|this|weak)\>"
+color brightred     "\<(goto|break|continue)\>"
+color brightcyan "\<(true|false)\>"
+color blue   "\<([0-9]+)\>"
+color red "[-+/*=<>?:!~%&|]" "->"
+color yellow ""(\\.|[^"])*"|'(\\.|[^'])*'"
+color brightblack "(^|[[:space:]])//.*"
+color brightblack start="^\s*/\*" end="\*/"
+color brightwhite,cyan "TODO:?"
+color ,green "[[:space:]]+$"
+color ,red "	+ +| +	+"

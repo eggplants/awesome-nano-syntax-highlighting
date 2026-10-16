@@ -1,0 +1,16 @@
+# Source: https://github.com/pazmivaniye/nanorc/blob/834ba5d8c14be9921378a2202e263e2ca4f95fdc/pbm.nanorc
+# License: MIT
+
+syntax "pbm" "\.pbm$"
+comment "#"
+
+# Values.
+color black,white "0\s*"
+color italic,lightblack,black "1\s*"
+
+color black,white "[^ -~]"
+
+# Comments.
+color italic,lightblack "^\s*#.*"
+
+color ,white "\s+$"

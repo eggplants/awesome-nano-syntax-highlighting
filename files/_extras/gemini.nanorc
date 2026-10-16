@@ -1,0 +1,24 @@
+# Source: https://github.com/galenguyer/nano-syntax-highlighting/blob/6f7cb16bf238fa5c55995377ec9d1d3fa9b9515f/gemini.nanorc
+# License: GPL-3.0-or-later
+
+## syntax highlighting for gemini:// markup language
+
+syntax gemini "\.(gemini|gmi)$"
+
+# Heading levels
+color brightgreen "^#.*"
+color brightcyan "^##.*"
+color brightmagenta "^###.*"
+
+# Link Text
+color brightred "^=>\s*\S+\s+.*"
+# Link URL
+color green "^=>\s*\S+"
+# Link Prefix
+color yellow "^=>"
+
+# Bullet Lists
+color brightblue "^\*.*"
+
+# Monospaced Blocks
+color white,black start="^```" end="^```"

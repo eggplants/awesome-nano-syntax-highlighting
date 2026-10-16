@@ -1,0 +1,10 @@
+[tools]
+python = "latest"
+
+[tasks.update]
+description = "Fetch the latest *.nanorc files listed in scripts/sources.toml into files/"
+run = "python3 scripts/update.py"
+
+[tasks.inventory]
+description = "List every *.nanorc found in the repositories listed in README.md (JSON lines)"
+run = "python3 scripts/inventory.py"

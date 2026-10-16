@@ -1,0 +1,57 @@
+# Source: https://github.com/GitHubonline1396529/nano-zimpl/blob/b89e96b63418214af063f68ad0ee994fbfe08d3a/zimpl.nanorc
+# License: GPL-2.0
+
+## Syntax highlighting for Zimpl .zpl files.
+##
+## Date: 2025-06-30
+## Author: GitHubonline1396529
+## Version: v0.1.0.0
+
+syntax "zimpl" "\.(zpl|zimpl)$"
+comment "#"
+
+## Basic operators.
+color brightred "\+|\-|\*|/|\^|\*\*|mod|!"
+color brightred "\b(and|or|not|cross|union|inter|without|symdiff)\b"
+color brightyellow "==|>=|<=|>|<"
+
+## Data types.
+
+# Tuples and sets.
+color yellow "<[^\"<>]*>"
+
+# True and false.
+color red "\b(true|false)\b"
+
+# Strings.
+color lightblue "\"(\\\\\"|\\\\|.|\\n)*\""
+
+## Key words.
+# Process control.
+color blue "\b(if|else|then|end|forall|do|with|in)\b"
+
+# Declarations.
+color blue "\b(read|as|skip|use|comment|real|binary|integer)\b"
+color brightred "\b(param|set|var|sos)\b"
+color yellow "\b(defnumb|defstrg|defbool|defset|defnum)\b"
+
+# Functions.
+color brightmagenta "\b(sqrt|abs|sgn|floor|ceil|round|max|min|sum|prod|card|random|ord|length|substr|proj|argmax|argmin|permutate)\b"
+color brightmagenta "\b(powerset|indexset|subset)\b"
+color brightmagenta "\(|\)"
+
+# Model constructs.
+color lightred "\b(maximize|minimize)\b"
+color brightred "\b(subto|vif|type1|type2|priority|scale|separate|checkonly|indicator|qubo|penalty[0-9]+)\b"
+
+# Special output commands.
+color magenta "\b(do print|do check)\b"
+
+## Special characters.
+color cyan "\[|\]"
+color brightwhite ",|;|\|"
+color brightwhite ":"
+color brightyellow ":=|="
+
+## Comment lines.
+color green "(^|[^[:alnum:]_\"])#.*$"

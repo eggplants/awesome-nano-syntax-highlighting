@@ -1,0 +1,22 @@
+# Source: https://github.com/pazmivaniye/nanorc/blob/834ba5d8c14be9921378a2202e263e2ca4f95fdc/cabal.nanorc
+# License: MIT
+
+syntax "cabal" "\.cabal$"
+header "^cabal-version:"
+comment "--"
+
+# Conditionals.
+color bold,lightwhite "^\s*((el)?if\s|else)$"
+color bold,lightwhite "\b(False|True)\b"
+
+# Headings.
+icolor bold,lightwhite "^(common|benchmark|executable|flag)\b"
+icolor bold,lightwhite "^((foreign-)?library|test-suite)\b"
+icolor bold,lightwhite "^\s*[a-z_][a-z_0-9-]+:(\s|$)"
+
+color black,white "[^ -~]"
+
+# Comments.
+color italic,lightblack "--.*"
+
+color ,white "\s+$"

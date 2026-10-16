@@ -1,0 +1,17 @@
+# Source: https://github.com/galenguyer/nano-syntax-highlighting/blob/6f7cb16bf238fa5c55995377ec9d1d3fa9b9515f/lisp.nanorc
+# License: GPL-3.0-or-later
+
+syntax "Lisp" "(emacs|zile)$" "\.(el|li?sp|scm|ss)$"
+
+color brightblue "\([a-z-]+"
+color red "\(([-+*/<>]|<=|>=)|'"
+color blue   "\<[0-9]+\>"
+icolor cyan "\<nil\>"
+color brightcyan  "\<[tT]\>"
+color yellow   "\"(\\.|[^"])*\""
+color magenta   "'[A-Za-z][A-Za-z0-9_-]+"
+color magenta   "\\.?"
+color brightblack  "(^|[[:space:]]);.*"
+color brightwhite,yellow "\<(FIXME|TODO|XXX)\>"
+color ,green "[[:space:]]+$"
+color ,red "	+ +| +	+"

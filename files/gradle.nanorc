@@ -1,0 +1,27 @@
+# Source: https://github.com/galenguyer/nano-syntax-highlighting/blob/6f7cb16bf238fa5c55995377ec9d1d3fa9b9515f/gradle.nanorc
+# License: GPL-3.0-or-later
+
+syntax "groovy" "\.(groovy|gradle)$"
+
+# Keywords
+color brightblue "\<(boolean|byte|char|double|enum|float|int|long|new|short|super|this|transient)\>"
+color brightblue "\<(as|assert|break|case|catch|continue|default|do|else|finally|for|goto|if|in|return|switch|throw|try|while)\>"
+color brightblue "\<(abstract|class|extends|implements|import|interface|native|package|private|protected|public|static|strictfp|synchronized|throws|trait|void|volatile)\>"
+color brightblue "\<(const|def|final|instanceof)\>"
+color brightblue "\<(true|false|null)\>"
+
+# Strings
+color brightyellow ""(\\.|[^"])*"" "'(\\.|[^'])*'"
+
+# Interpolation
+icolor yellow "\$\{[^\}]*}"
+
+# Comments
+color cyan "^//.*"
+color cyan "\s//.*"
+color cyan start="^/\*(\*)?" end="\*/"
+color cyan start="\s/\*(\*)?" end="\*/"
+color brightwhite,yellow "\<(FIXME|TODO|XXX)\>"
+
+# Trailing whitespace
+color ,green "[[:space:]]+$"

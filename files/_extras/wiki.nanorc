@@ -1,0 +1,48 @@
+# Source: https://codeberg.org/lejun/wiki.nanorc/src/commit/99e87fff5939d1b987222c1848bbe28688493b1c/wiki.nanorc
+# License: NOASSERTION (no license found upstream)
+
+# FILENAME:    wiki.nanorc
+# DESCRIPTION: Wikitext syntax highlighting for GNU nano text editor
+# Version:     0.3
+# DATE:        2022/05/21
+
+syntax "Wikitext" "\.(wiki|wikitext|mediawiki)$"
+
+# Italic
+# italic
+color cyan "'.*'"
+# Bold
+# bold
+color cyan "''.*''"
+# Italic and bold
+# bold, italc
+color cyan "'''.*'''"
+# Section
+color cyan start="^=*[[:space:]]" end="[[:space:]]=*$"
+# Bullet list
+color cyan "^\**"
+# Numbered list
+color cyan "^#*"
+# Definition list
+color cyan "^;*"
+# Indent text
+color cyan "^:*"
+# Mix of different types of list
+color cyan "^[\*#;:]*"
+# Preformatted text
+color ,cyan "^[[:space:]]"
+# HTML tag
+color green "<.*>"
+# Variable
+color red "\{\{\{.*\}\}\}"
+# Comment
+#color grey start="<!--" end="-->"
+# URL
+color cyan  "\[.*\]"
+# Template
+color magenta start="\{\{" end="\}\}"
+# Table
+color magenta start="\{| class="wikitable"" end="|\}"
+# Signature
+color cyan,white "----"
+color cyan,white "∼∼∼∼"

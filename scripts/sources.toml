@@ -1,0 +1,893 @@
+# Manifest of the *.nanorc files collected into files/ by scripts/update.py.
+[[source]]
+repo = "savannah:nano"
+note = "Official GNU nano syntaxes; preferred for every language they cover."
+files = [
+  "syntax/asm.nanorc",
+  "syntax/autoconf.nanorc",
+  "syntax/awk.nanorc",
+  "syntax/c.nanorc",
+  "syntax/changelog.nanorc",
+  "syntax/cmake.nanorc",
+  "syntax/css.nanorc",
+  "syntax/default.nanorc",
+  "syntax/email.nanorc",
+  "syntax/extra/ada.nanorc",
+  "syntax/extra/fortran.nanorc",
+  "syntax/extra/haskell.nanorc",
+  "syntax/extra/spec.nanorc",
+  "syntax/go.nanorc",
+  "syntax/groff.nanorc",
+  "syntax/guile.nanorc",
+  "syntax/html.nanorc",
+  "syntax/java.nanorc",
+  "syntax/javascript.nanorc",
+  "syntax/json.nanorc",
+  "syntax/lua.nanorc",
+  "syntax/makefile.nanorc",
+  "syntax/man.nanorc",
+  "syntax/markdown.nanorc",
+  "syntax/nanohelp.nanorc",
+  "syntax/nanorc.nanorc",
+  "syntax/nftables.nanorc",
+  "syntax/objc.nanorc",
+  "syntax/ocaml.nanorc",
+  "syntax/patch.nanorc",
+  "syntax/perl.nanorc",
+  "syntax/php.nanorc",
+  "syntax/po.nanorc",
+  "syntax/python.nanorc",
+  "syntax/ruby.nanorc",
+  "syntax/rust.nanorc",
+  "syntax/sh.nanorc",
+  "syntax/sql.nanorc",
+  "syntax/tcl.nanorc",
+  "syntax/tex.nanorc",
+  "syntax/texinfo.nanorc",
+  "syntax/xml.nanorc",
+  "syntax/yaml.nanorc",
+]
+extras = ["syntax/extra/povray.nanorc"]
+
+[[source]]
+repo = "github:galenguyer/nano-syntax-highlighting"
+note = "Actively maintained fork of scopatz/nanorc. Used unless the language is covered by official nano or a better dedicated repository."
+license = "GPL-3.0-or-later"
+files = [
+  "apacheconf.nanorc",
+  "arduino.nanorc",
+  "asciidoc.nanorc",
+  "batch.nanorc",
+  "Brewfile.nanorc",
+  "clojure.nanorc",
+  "coffeescript.nanorc",
+  "conf.nanorc",
+  "csh.nanorc",
+  "csv.nanorc",
+  "cython.nanorc",
+  "Dockerfile.nanorc",
+  "dot.nanorc",
+  "dotenv.nanorc",
+  "elixir.nanorc",
+  "erb.nanorc",
+  "etc-hosts.nanorc",
+  "fish.nanorc",
+  "fsharp.nanorc",
+  "git.nanorc",
+  "glsl.nanorc",
+  "godot.nanorc",
+  "gradle.nanorc",
+  "haml.nanorc",
+  "hcl.nanorc",
+  "ical.nanorc",
+  "ini.nanorc",
+  "inputrc.nanorc",
+  "jsonc.nanorc",
+  "jsx.nanorc",
+  "julia.nanorc",
+  "lisp.nanorc",
+  "nginx.nanorc",
+  "octave.nanorc",
+  "pkg-config.nanorc",
+  "pkgbuild.nanorc",
+  "powershell.nanorc",
+  "prolog.nanorc",
+  "properties.nanorc",
+  "pug.nanorc",
+  "puppet.nanorc",
+  "reST.nanorc",
+  "scala.nanorc",
+  "sed.nanorc",
+  "solidity.nanorc",
+  "subrip.nanorc",
+  "svn.nanorc",
+  "swift.nanorc",
+  "systemd.nanorc",
+  "toml.nanorc",
+  "ts.nanorc",
+  "verilog.nanorc",
+  "vhdl.nanorc",
+  "xresources.nanorc",
+  "yum.nanorc",
+  "zsh.nanorc",
+]
+extras = [
+  "beancount.nanorc",
+  "brainfuck.nanorc",
+  "colortest.nanorc",
+  "conky.nanorc",
+  "creole.nanorc",
+  "expect.nanorc",
+  "gemini.nanorc",
+  "genie.nanorc",
+  "gentoo.nanorc",
+  "gophermap.nanorc",
+  "i3.nanorc",
+  "jrnl.nanorc",
+  "keymap.nanorc",
+  "kickstart.nanorc",
+  "ledger.nanorc",
+  "m3u.nanorc",
+  "moonscript.nanorc",
+  "mpdconf.nanorc",
+  "mutt.nanorc",
+  "nmap.nanorc",
+  "peg.nanorc",
+  "privoxy.nanorc",
+  "rego.nanorc",
+  "Rnw.nanorc",
+  "seed7.nanorc",
+  "sieve.nanorc",
+  "sls.nanorc",
+  "sparql.nanorc",
+  "v.nanorc",
+  "vala.nanorc",
+  "vi.nanorc",
+  "x11basic.nanorc",
+  "zeek.nanorc",
+]
+ignore = [
+  "asm.nanorc",
+  "awk.nanorc",
+  "c.nanorc",
+  "cmake.nanorc",
+  "csharp.nanorc",
+  "css.nanorc",
+  "d.nanorc",
+  "email.nanorc",
+  "fortran.nanorc",
+  "go.nanorc",
+  "groff.nanorc",
+  "haskell.nanorc",
+  "html.nanorc",
+  "jade.nanorc",
+  "java.nanorc",
+  "js.nanorc",
+  "json.nanorc",
+  "kotlin.nanorc",
+  "lua.nanorc",
+  "makefile.nanorc",
+  "man.nanorc",
+  "markdown.nanorc",
+  "nanorc.nanorc",
+  "ocaml.nanorc",
+  "patch.nanorc",
+  "perl.nanorc",
+  "perl6.nanorc",
+  "php.nanorc",
+  "po.nanorc",
+  "pov.nanorc",
+  "python.nanorc",
+  "rpmspec.nanorc",
+  "ruby.nanorc",
+  "rust.nanorc",
+  "sh.nanorc",
+  "sql.nanorc",
+  "tcl.nanorc",
+  "tex.nanorc",
+  "xml.nanorc",
+  "yaml.nanorc",
+  "zig.nanorc",
+]
+
+[[source]]
+repo = "github:pazmivaniye/nanorc"
+files = [
+  "cabal.nanorc",
+  "erlang.nanorc",
+  "matlab.nanorc",
+]
+extras = [
+  "metal.nanorc",
+  "nasm.nanorc",
+  "paz.nanorc",
+  "pbm.nanorc",
+]
+ignore = [
+  "bash.nanorc",
+  "c.nanorc",
+  "cython.nanorc",
+  "default.nanorc",
+  "f90.nanorc",
+  "glsl.nanorc",
+  "haskell.nanorc",
+  "html.nanorc",
+  "ini.nanorc",
+  "json.nanorc",
+  "julia.nanorc",
+  "makefile.nanorc",
+  "nanorc.nanorc",
+  "objc.nanorc",
+  "php.nanorc",
+  "powershell.nanorc",
+  "python.nanorc",
+  "rust.nanorc",
+  "tcl.nanorc",
+  "tex.nanorc",
+  "toml.nanorc",
+  "yaml.nanorc",
+]
+
+[[source]]
+repo = "github:gerph/nano-colour"
+note = "Example syntaxes bundled with the nano-colour highlighter."
+files = [
+  "examples/codeowners.nanorc",
+  "examples/groovy.nanorc",
+  "examples/jinja2.nanorc",
+]
+ignore = [
+  "examples/arm.nanorc",
+  "examples/bash.nanorc",
+  "examples/bbcbasic.nanorc",
+  "examples/c-file.nanorc",
+  "examples/cmhg.nanorc",
+  "examples/default.nanorc",
+  "examples/fish.nanorc",
+  "examples/fortran.nanorc",
+  "examples/git-commit.nanorc",
+  "examples/git-rebase.nanorc",
+  "examples/git-tag.nanorc",
+  "examples/go.nanorc",
+  "examples/graphviz.nanorc",
+  "examples/html.nanorc",
+  "examples/jfpatch.nanorc",
+  "examples/js.nanorc",
+  "examples/json.nanorc",
+  "examples/lua.nanorc",
+  "examples/makefile.nanorc",
+  "examples/markdown.nanorc",
+  "examples/nanorc.nanorc",
+  "examples/obey.nanorc",
+  "examples/pascal.nanorc",
+  "examples/perl.nanorc",
+  "examples/php.nanorc",
+  "examples/python.nanorc",
+  "examples/terraform.nanorc",
+  "examples/xml.nanorc",
+  "examples/yaml.nanorc",
+]
+
+[[source]]
+repo = "github:gerph/nanorc-riscos"
+note = "RISC OS file formats."
+extras = [
+  "bbcbasic.nanorc",
+  "cmhg.nanorc",
+  "jfpatch.nanorc",
+  "obey.nanorc",
+]
+rename = { "arm.nanorc" = "_extras/riscos-arm.nanorc", "c-file.nanorc" = "_extras/riscos-c.nanorc" }
+
+[[source]]
+repo = "github:remisalmon/nanorc"
+files = ["log.nanorc", "tsv.nanorc"]
+extras = ["lookml.nanorc"]
+ignore = [
+  "bash.nanorc",
+  "csv.nanorc",
+  "default.nanorc",
+  "dockerfile.nanorc",
+  "env.nanorc",
+  "fish.nanorc",
+  "go.nanorc",
+  "json.nanorc",
+  "markdown.nanorc",
+  "python.nanorc",
+  "sql.nanorc",
+  "terraform.nanorc",
+  "toml.nanorc",
+  "xml.nanorc",
+  "yaml.nanorc",
+]
+
+[[source]]
+repo = "github:serialhex/nano-highlight"
+note = "Old collection; only files without a better alternative are used."
+files = [
+  "aptsrclist.nanorc",
+  "editorconfig.nanorc",
+  "lex.nanorc",
+  "passwd.nanorc",
+  "yacc.nanorc",
+]
+extras = [
+  "ekghistory.nanorc",
+  "etc-stuff.nanorc",
+  "havp.nanorc",
+  "initng.nanorc",
+  "log-stuff.nanorc",
+  "maincf.nanorc",
+  "mimetype.nanorc",
+  "named.nanorc",
+  "nscd.nanorc",
+  "paludis.nanorc",
+  "pony.nanorc",
+  "rsync.nanorc",
+  "softcam.nanorc",
+  "tab.nanorc",
+  "todo.nanorc",
+  "txt2tags.nanorc",
+  "xorg.nanorc",
+]
+ignore = [
+  "apache2.nanorc",
+  "apacheconf.nanorc",
+  "asm.nanorc",
+  "bash.nanorc",
+  "batch.nanorc",
+  "c-file.nanorc",
+  "c.nanorc",
+  "changelog.nanorc",
+  "changelogs.nanorc",
+  "clike.nanorc",
+  "coffee.nanorc",
+  "conf.nanorc",
+  "config.nanorc",
+  "config2.nanorc",
+  "config3.nanorc",
+  "configfiles.nanorc",
+  "conky.nanorc",
+  "css.nanorc",
+  "cython.nanorc",
+  "default.nanorc",
+  "delphi.nanorc",
+  "desc.nanorc",
+  "Dockerfile.nanorc",
+  "dotemacs.nanorc",
+  "dotenv.nanorc",
+  "dummy.nanorc",
+  "ebuild.nanorc",
+  "emailquote.nanorc",
+  "etcportage.nanorc",
+  "etcxml.nanorc",
+  "fortran.nanorc",
+  "gentoo.nanorc",
+  "groff.nanorc",
+  "haskell.nanorc",
+  "html.nanorc",
+  "httpstatuscodes.nanorc",
+  "info.nanorc",
+  "ini.nanorc",
+  "initscript.nanorc",
+  "java.nanorc",
+  "js.nanorc",
+  "lisp.nanorc",
+  "lua.nanorc",
+  "makefile.nanorc",
+  "man.nanorc",
+  "markdown.nanorc",
+  "mutt.nanorc",
+  "nanorc.nanorc",
+  "others.nanorc",
+  "patch.nanorc",
+  "perl.nanorc",
+  "php.nanorc",
+  "php2.nanorc",
+  "plaudis.nanorc",
+  "po.nanorc",
+  "postgresql.nanorc",
+  "pov.nanorc",
+  "privoxy.nanorc",
+  "python.nanorc",
+  "rcfiles-new.nanorc",
+  "reST.nanorc",
+  "ruby.nanorc",
+  "scheme.nanorc",
+  "sh.nanorc",
+  "shlike.nanorc",
+  "sourceslist.nanorc",
+  "tcl.nanorc",
+  "tex.nanorc",
+  "toml.nanorc",
+  "urls.nanorc",
+  "vhdl.nanorc",
+  "xdefaults.nanorc",
+  "xml.nanorc",
+  "yaml.nanorc",
+]
+
+[[source]]
+repo = "github:Naereen/nanorc"
+note = "Deprecated by the author; only files without an alternative are used."
+extras = ["mgp.nanorc"]
+ignore = [
+  ".nanorc",
+  "apache2.nanorc",
+  "apacheconf.nanorc",
+  "asm.nanorc",
+  "awk.nanorc",
+  "c-file.nanorc",
+  "c.nanorc",
+  "caml.nanorc",
+  "changelog.nanorc",
+  "changelogs.nanorc",
+  "clike.nanorc",
+  "cmake.nanorc",
+  "conf.nanorc",
+  "config.nanorc",
+  "config2.nanorc",
+  "config3.nanorc",
+  "configfiles.nanorc",
+  "conky.nanorc",
+  "css.nanorc",
+  "cu.nanorc",
+  "cython.nanorc",
+  "debian.nanorc",
+  "default.nanorc",
+  "delphi.nanorc",
+  "desc.nanorc",
+  "dotemacs.nanorc",
+  "dummy.nanorc",
+  "ekghistory.nanorc",
+  "etc-stuff.nanorc",
+  "etcxml.nanorc",
+  "fortran.nanorc",
+  "gentoo.nanorc",
+  "groff.nanorc",
+  "haml.nanorc",
+  "havp.nanorc",
+  "histoire.nanorc",
+  "html.nanorc",
+  "info.nanorc",
+  "initng.nanorc",
+  "initscript.nanorc",
+  "java.nanorc",
+  "js.nanorc",
+  "julia.nanorc",
+  "log-stuff.nanorc",
+  "lua.nanorc",
+  "maincf.nanorc",
+  "makefile.nanorc",
+  "man.nanorc",
+  "markdown.nanorc",
+  "mimetype.nanorc",
+  "mutt.nanorc",
+  "named.nanorc",
+  "nanorc.nanorc",
+  "nscd.nanorc",
+  "objc.nanorc",
+  "others.nanorc",
+  "paludis.nanorc",
+  "passwd.nanorc",
+  "patch.nanorc",
+  "perl.nanorc",
+  "php.nanorc",
+  "php2.nanorc",
+  "pkgbuild.nanorc",
+  "po.nanorc",
+  "postgresql.nanorc",
+  "pov.nanorc",
+  "privoxy.nanorc",
+  "profile.nanorc",
+  "python.nanorc",
+  "rcfiles-new.nanorc",
+  "rcfiles.nanorc",
+  "reST.nanorc",
+  "rsync.nanorc",
+  "ruby.nanorc",
+  "sh.nanorc",
+  "shlike.nanorc",
+  "softcam.nanorc",
+  "sources_list.nanorc",
+  "strips.nanorc",
+  "tab.nanorc",
+  "tcl.nanorc",
+  "tex.nanorc",
+  "urls.nanorc",
+  "vhost.nanorc",
+  "xdefaults.nanorc",
+  "xml.nanorc",
+  "xorg.nanorc",
+  "zshrc.nanorc",
+]
+
+[[source]]
+repo = "github:jxpx666/blackbox-syntax-highlight"
+files = ["nano-syntax-highlight/syntaxes/desktop.nanorc"]
+extras = [
+  "nano-syntax-highlight/syntaxes/blackboxrcfile.nanorc",
+  "nano-syntax-highlight/syntaxes/blackboxsessionmenufile.nanorc",
+]
+ignore = [
+  "nano-syntax-highlight/syntaxes/bk.nano/blackboxmenu-copiar2.nanorc",
+  "nano-syntax-highlight/syntaxes/bk.nano/blackboxmenu.nanorc",
+  "nano-syntax-highlight/syntaxes/bk.nano/blackboxrc-copiar2.nanorc",
+  "nano-syntax-highlight/syntaxes/bk.nano/blackboxrc.nanorc",
+  "nano-syntax-highlight/syntaxes/bk.nano/dot.nanorc",
+  "nano-syntax-highlight/syntaxes/bk.nano/dotenv.nanorc",
+  "nano-syntax-highlight/syntaxes/bk.nano/email.nanorc",
+  "nano-syntax-highlight/syntaxes/bk.nano/keymap.nanorc",
+  "nano-syntax-highlight/syntaxes/bk.nano/man.nanorc",
+  "nano-syntax-highlight/syntaxes/bk.nano/mutt.nanorc",
+  "nano-syntax-highlight/syntaxes/bk.nano/x11basic.nanorc",
+  "nano-syntax-highlight/syntaxes/bk.nano/xresources.nanorc",
+  "nano-syntax-highlight/syntaxes/dot.nanorc",
+]
+
+[[source]]
+repo = "github:hankache/raku.nanorc"
+files = ["raku.nanorc"]
+
+[[source]]
+repo = "github:Oples/nanorc-nim"
+files = ["nim.nanorc"]
+
+[[source]]
+repo = "github:sls1005/kotlin-nanorc"
+files = ["kotlin.nanorc"]
+
+[[source]]
+repo = "github:njjenkins/R-nanorc"
+license = "GPL-3.0-or-later"
+files = ["R.nanorc"]
+
+[[source]]
+repo = "github:aaron-dotnet/nanorc-extras"
+files = ["csharp.nanorc"]
+
+[[source]]
+repo = "github:cadeweinberg/nanorc"
+files = ["zig.nanorc"]
+
+[[source]]
+repo = "github:vinesworth/d-nanorc"
+files = ["d.nanorc"]
+
+[[source]]
+repo = "github:sith-ikjetil/pascal.nanorc"
+files = ["src/pascal.nanorc"]
+
+[[source]]
+repo = "github:Noiseko/nano-nix"
+files = ["nix.nanorc"]
+
+[[source]]
+repo = "github:ogswag/org-syntax-for-nano"
+files = ["org.nanorc"]
+
+[[source]]
+repo = "github:njjenkins/stata-nanorc"
+license = "GPL-3.0-or-later"
+extras = ["stata.nanorc"]
+
+[[source]]
+repo = "github:jamesrweb/elm.nanorc"
+extras = ["elm.nanorc"]
+
+[[source]]
+repo = "github:IanChew/ARM-assembly-nanorc"
+extras = ["arm.nanorc"]
+
+[[source]]
+repo = "github:AndrewGilchrist/custom_nanorc"
+extras = ["ftl.nanorc", "mako.nanorc"]
+ignore = [
+  "c.nanorc",
+  "java.nanorc",
+  "perl.nanorc",
+  "xsd.nanorc",
+]
+
+[[source]]
+repo = "github:minilux-org/nanorc-minilux"
+extras = ["minilux.nanorc"]
+
+[[source]]
+repo = "github:rfanth/tjson-highlight"
+extras = ["editors/nano/tjson.nanorc"]
+
+[[source]]
+repo = "github:StevieEngbrock/english.nanorc"
+extras = ["english.nanorc"]
+
+[[source]]
+repo = "github:Kapendev/zen-c-nanorc"
+extras = ["zc.nanorc"]
+
+[[source]]
+repo = "github:0hip/nanorc-for-FANUC"
+extras = ["fanuc.nanorc"]
+
+[[source]]
+repo = "github:ursalang/nanorc-ursa"
+license = "MIT"
+extras = ["ursa.nanorc"]
+
+[[source]]
+repo = "github:cqn-brwpna9/uiua-nano-config"
+extras = ["uiua.nanorc"]
+
+[[source]]
+repo = "github:GitHubonline1396529/nano-zimpl"
+extras = ["zimpl.nanorc"]
+
+[[source]]
+repo = "github:distant-chervony/nano-keyd-syntax-hl"
+extras = ["keyd.nanorc"]
+
+[[source]]
+repo = "github:AntoineLandrieux/SoareLanguageSupport"
+extras = ["Nano/soare.nanorc"]
+
+[[source]]
+repo = "github:tramegit/calcpad-nano"
+extras = ["cpd.nanorc"]
+
+[[source]]
+repo = "github:ysdragon/ring-nano"
+extras = ["ring.nanorc"]
+
+[[source]]
+repo = "github:tdeshazo/fountain_nanorc"
+extras = ["fountain.nanorc"]
+
+[[source]]
+repo = "github:procedium/sacalon-nanorc"
+extras = ["sacalon.nanorc"]
+
+[[source]]
+repo = "github:kabirdkng/pact-nano-syntax"
+extras = ["pact.nanorc"]
+
+[[source]]
+repo = "github:danburk10/inform6.nanorc"
+extras = ["inform6.nanorc"]
+
+[[source]]
+repo = "github:Wsoum/loza-nanorc"
+extras = ["loza.nanorc"]
+
+[[source]]
+repo = "github:markusmueller73/purebasic.nanorc"
+extras = ["purebasic.nanorc"]
+
+[[source]]
+repo = "github:emacstheviking/mercury-nano-mode"
+extras = ["mercury.nanorc"]
+
+[[source]]
+repo = "github:sami2020pro/pashmak-nanorc"
+extras = ["pashmak.nanorc"]
+
+[[source]]
+repo = "codeberg:lejun/wiki.nanorc"
+extras = ["wiki.nanorc"]
+
+[[source]]
+repo = "github:le-jun/cooklang.nanorc"
+extras = ["cooklang.nanorc"]
+
+[[source]]
+repo = "github:serjan-nasredin/toit.nanorc"
+extras = ["toit.nanorc"]
+
+[[source]]
+repo = "github:nyrLang/nyrLang-syntax-nano"
+extras = ["nyr.nanorc"]
+
+[[source]]
+repo = "github:sami2020pro/vile-nanorc"
+extras = ["vile.nanorc"]
+
+[[source]]
+repo = "github:megidont/quakec-nanorc"
+extras = ["qc.nanorc"]
+
+[[source]]
+repo = "github:mwsoverdick/bitbake_nanorc"
+extras = ["bb.nanorc"]
+
+[[source]]
+repo = "github:CraftTweaker/zenscript-nanorc"
+extras = ["zs.nanorc"]
+
+[[source]]
+repo = "github:Nuolong/bminor-nano-syntax-highlighting"
+extras = ["bminor.nanorc"]
+
+[[source]]
+repo = "github:poison4999/odin-nano-syntax"
+extras = ["odin.nanorc"]
+
+[[source]]
+repo = "github:GutPuncher/holyc-nano"
+extras = ["hc.nanorc"]
+ignore = [".nanorc"]
+
+[[source]]
+repo = "github:megasaturnv/openscad-nano-syntax-highlighting-nanorc"
+extras = ["openscad.nanorc"]
+
+[[source]]
+repo = "github:pic16f874/isc-nanorc"
+extras = ["isc-cos.nanorc"]
+ignore = ["yaml.nanorc"]
+
+[[source]]
+repo = "github:Martinfx/nanorc"
+extras = ["gnucobol.nanorc"]
+
+[[source]]
+repo = "github:ccie5022/cisco.nanorc"
+extras = ["cisco.nanorc"]
+
+[[source]]
+repo = "github:krupski/intel-hex.nanorc"
+extras = ["intel-hex.nanorc"]
+
+[[source]]
+repo = "github:Selonka/wdl_nanorc"
+extras = ["wdl.nanorc"]
+
+[[source]]
+repo = "github:faissaloo/gml.nanorc"
+extras = ["gml.nanorc"]
+
+[[source]]
+repo = "github:SimonItaly/pawn-nanorc"
+extras = ["pawn.nanorc"]
+
+[[source]]
+repo = "github:indrajithbandara/Naxe"
+extras = ["haxe.nanorc"]
+
+[[source]]
+repo = "github:devrimgunduz/nanorc-pgsql"
+extras = ["pgsql.nanorc"]
+
+[[source]]
+repo = "github:gregoswald/whileyHighLightingInNano"
+extras = ["whiley.nanorc"]
+
+[[source]]
+repo = "github:sebastianwagner/dar.nanorc"
+extras = ["dar.nanorc"]
+
+[[source]]
+repo = "github:mikelietz/feature.nanorc"
+extras = ["feature.nanorc"]
+
+[[source]]
+repo = "github:scopatz/nanorc"
+skip = "Unmaintained; superseded by galenguyer/nano-syntax-highlighting."
+
+[[source]]
+repo = "github:richrad/nanorc-mac"
+skip = "2012 snapshot; every file is covered by newer sources."
+
+[[source]]
+repo = "github:hroskes/nanorc"
+skip = "Every file is covered by official nano or galenguyer/nano-syntax-highlighting."
+
+[[source]]
+repo = "codeberg:lejun/cooklang.nanorc"
+skip = "Identical to its GitHub mirror le-jun/cooklang.nanorc, which carries a license."
+
+[[source]]
+repo = "github:uuupah/nanorc"
+skip = "jsonc: galenguyer/nano-syntax-highlighting is newer."
+
+[[source]]
+repo = "github:nousantx/javascript-nanorc"
+skip = "js/ts: derived from galenguyer/nano-syntax-highlighting without a license."
+
+[[source]]
+repo = "github:duyqphung/fsharp-nanorc"
+skip = "fsharp: galenguyer/nano-syntax-highlighting is more complete."
+
+[[source]]
+repo = "github:loglob/csharp.nanorc"
+skip = "csharp: aaron-dotnet/nanorc-extras is newer."
+
+[[source]]
+repo = "github:sls1005/R-nanorc"
+skip = "R: njjenkins/R-nanorc is newer and more complete."
+
+[[source]]
+repo = "github:sls1005/cython-nanorc"
+skip = "cython: galenguyer/nano-syntax-highlighting is used."
+
+[[source]]
+repo = "github:sls1005/nim-nanorc"
+skip = "nim: Oples/nanorc-nim is more complete."
+
+[[source]]
+repo = "github:bfu4/solidity-nanorc"
+skip = "solidity: galenguyer/nano-syntax-highlighting is more complete."
+
+[[source]]
+repo = "github:NicRiv/nanorc"
+skip = "vhdl: same as galenguyer/nano-syntax-highlighting."
+
+[[source]]
+repo = "github:Tech-Matt/nano-vhdl"
+skip = "vhdl: same as galenguyer/nano-syntax-highlighting."
+
+[[source]]
+repo = "github:Mrezadwiprasetiawan/Java-nanorc"
+skip = "Java color variants; official java.nanorc is used."
+
+[[source]]
+repo = "github:R-Rothrock/assembler-nanorc"
+skip = "asm: official nano is used."
+
+[[source]]
+repo = "github:SteveHH72/yaml-erweiterung-nano"
+skip = "yaml: official nano is used."
+
+[[source]]
+repo = "github:davidhcefx/Nano-Syntax-Highlighting_Batch-File"
+skip = "Merged into galenguyer/nano-syntax-highlighting (batch.nanorc)."
+
+[[source]]
+repo = "github:tomkyle/nanorc-brewfile"
+skip = "Merged into galenguyer/nano-syntax-highlighting (Brewfile.nanorc)."
+
+[[source]]
+repo = "github:tomkyle/nanorc-conf"
+skip = "conf: galenguyer/nano-syntax-highlighting is used."
+
+[[source]]
+repo = "github:i137/bash-nanorc"
+skip = "sh: official nano is used."
+
+[[source]]
+repo = "github:mitchell486/nanorc"
+skip = "bat/powershell/sh: covered by newer sources."
+
+[[source]]
+repo = "github:paw-lu/toml-nanorc"
+skip = "toml: galenguyer/nano-syntax-highlighting is used."
+
+[[source]]
+repo = "github:Rah1x/nanorc"
+skip = "css/ini/logs: covered by newer sources."
+
+[[source]]
+repo = "github:defaye/git.nanorc"
+skip = "git: galenguyer/nano-syntax-highlighting is used."
+
+[[source]]
+repo = "github:mbentley/Dockerfile.nanorc"
+skip = "Dockerfile: galenguyer/nano-syntax-highlighting is used."
+
+[[source]]
+repo = "github:borjaeg/nanorc"
+skip = "javascript/python/sh: official nano is used."
+
+[[source]]
+repo = "github:danielpclark/nanorc-erb"
+skip = "erb: galenguyer/nano-syntax-highlighting is used."
+
+[[source]]
+repo = "github:serianox/lua.nanorc"
+skip = "lua: official nano is used."
+
+[[source]]
+repo = "github:matiasinsaurralde/golang.nanorc"
+skip = "go: official nano is used."
+
+[[source]]
+repo = "github:domix/nanorc"
+skip = "groovy: gerph/nano-colour is more complete."

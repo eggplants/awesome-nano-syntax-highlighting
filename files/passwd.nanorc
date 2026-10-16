@@ -1,0 +1,14 @@
+# Source: https://github.com/serialhex/nano-highlight/blob/d3fdc6a29658503f8b19bff1a0809406859f7f06/passwd.nanorc
+# License: Unlicense
+
+syntax "passwd" "(\.|/)passwd$" "(\.|/)shadow$"
+color white ".*$"
+color blue "\:.*$"
+color yellow "\:*\:"
+color cyan "/.*$"
+color red "/bin/false"
+color brightred "root"
+color brightgreen "/bin/.*sh"
+color white "[0-9]"
+color magenta "\:\/.*\:"
+

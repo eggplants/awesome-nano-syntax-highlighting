@@ -1,0 +1,126 @@
+# Source: https://github.com/rfanth/tjson-highlight/blob/d4d8764a6b30aec59809ac4f81c9e9dc81f44d3b/editors/nano/tjson.nanorc
+# License: BSD-3-Clause
+
+## TJSON (Text JSON) syntax highlighting for GNU nano
+## https://textjson.com
+##
+## Patterns mirror the tmLanguage grammar as closely as nano allows.
+## All line-start indent patterns use (  )* (pairs of spaces) to match the
+## grammar's ^((?:  )*) — a fundamental TJSON structural invariant.
+##
+## Rule ordering: broad first, specific last (later rules override earlier).
+##
+## Install (pick one):
+##   System-wide:  copy to /usr/share/nano/tjson.nanorc
+##   Per-user:     copy to ~/.config/nano/tjson.nanorc
+##                 then add to ~/.nanorc or ~/.config/nano/nanorc:
+##                   include "~/.config/nano/tjson.nanorc"
+
+syntax "tjson" "\.(tjson|textjson)$"
+
+## ── Numbers ───────────────────────────────────────────────────────────────────
+## grammar: constant.numeric.tjson
+##
+## Line-level: even indent + markers + number directly (no space — space means bare string)
+color yellow "^(  )*(\[\ )*(\{\ )?-?[0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?"
+##
+## Inline: colon immediately followed by number (no space).
+## "key:42" and "float:3.14159" are typed values; "key: 42" (space) is a bare string.
+## Placed before the key rule so the key rule fires after and reclaims the colon to blue,
+## leaving just the digits yellow. Safe from IDs/dates/UUIDs — those don't have ":digit".
+color yellow ":-?[0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?"
+
+## ── Booleans (line-level and inline) ─────────────────────────────────────────
+## grammar: (true|false)\b  →  constant.language.boolean.tjson
+## Key rule fires after and overrides any false matches inside key names
+color brightmagenta "true"
+color brightmagenta "false"
+
+## ── Null (line-level and inline) ─────────────────────────────────────────────
+## grammar: null\b  →  constant.language.null.tjson
+color magenta "null"
+
+## ── Bare string array elements ────────────────────────────────────────────────
+## grammar: ^((?:  )*)((?:\[ )*)[ _](.+)$  →  string.unquoted.bare.tjson
+## Even indent + "[ " markers + mandatory opener + content
+## The opener distinguishes bare strings from numeric/boolean scalars above. It is
+## a space by default, or "_" when a generator was asked to make it visible
+## (tjson --bare-strings marked); the two are interchangeable and may be mixed.
+## Not the space before an indent glyph — "_/<" is not a glyph, so line 77 keeps
+## its literal space.
+##
+## The "[^ ]" is load-bearing. Written as "[ _].+$" the indent itself can supply
+## the opener: "(  )*" backtracks to zero pairs, the first space of "  1" is taken
+## for the opening quote and the whole line goes green -- and because this rule is
+## after the number, boolean and null rules, green won. Requiring a non-space
+## after the opener forces the opener to the odd column a bare string really sits
+## at, which no even-indented scalar can reach.
+color green "^(  )*(\[\ )*[ _][^ ].*$"
+
+## ── Fold-continuation lines ───────────────────────────────────────────────────
+## grammar: ^((?:  )*)(/ )(.*)$
+## Content keeps the scope of whatever it continues; the marker itself is
+## punctuation.definition.fold-marker.tjson
+## Color the whole line green first; "/ " is overridden to brightcyan below
+color green "^(  )*/ .*$"
+
+## ── Keys (bare) ───────────────────────────────────────────────────────────────
+## grammar: [\\p{L}\\p{N}][\\p{L}\\p{N}_()/'.!%&, -]*  →  entity.other.attribute-name.bare.tjson
+## After numbers so digit-starting keys override the number color on their leading digits
+##
+## The class carries the specification's full set. It used to stop at
+## "_()/'.!%&,-" and so omitted twelve characters the format allows -- ; @ $ # *
+## = ? ^ ~ < > + -- which left "  at@sign: 1" with no colour on the key at all.
+## The tmLanguage grammar had the identical gap and was fixed; this file was
+## written from the same wrong class and was not.
+##
+## The space is deliberately NOT here, although a key may contain single spaces.
+## Nano patterns are unanchored, so a class containing a space lets a key run
+## backwards across whatever sits before it on an inline-packed line.
+color brightblue "[[:alpha:][:digit:]][[:alnum:]_()/'.!%&,;@$#*=?^~<>+-]*:"
+
+## ── Quoted strings ────────────────────────────────────────────────────────────
+## grammar: json-strings  →  string.quoted.double.tjson
+## After numbers/booleans/null/keys so it overrides all of them inside string content
+color brightyellow "\"([^\"\\]|\\.)*\""
+
+## ── Structural markers ────────────────────────────────────────────────────────
+## "[ "  →  keyword.operator.array-marker.tjson
+## "{ "  →  keyword.operator.object-marker.tjson
+## Override green where markers appear in bare-string lines
+color brightcyan "\[\ "
+color brightcyan "\{\ "
+
+## ── Fold-continuation marker "/ " ─────────────────────────────────────────────
+## grammar: punctuation.definition.fold-marker.tjson
+## Overrides the leading "/ " on fold lines back to brightcyan after green above
+color brightcyan "^(  )*/ "
+
+## ── Indent-adjustment glyphs "/< " and "/>" ──────────────────────────────────
+## grammar: ^((?:  )*) (/[<>])\s*$  →  keyword.control.indent-adjustment.tjson
+## Note the mandatory bare-string-separator space before the glyph
+color brightcyan "^(  )* /[<>][[:space:]]*$"
+
+## ── Table pipes ───────────────────────────────────────────────────────────────
+## grammar: punctuation.separator.table.tjson
+## Typed cell values: "|42" is a number, "|true" is boolean, "| 42" is a bare string.
+## Place typed-value rules before the pipe rule so pipe reclaims "|" back to white.
+color yellow "\|-?[0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?"
+color brightmagenta "\|(true|false)"
+color magenta "\|null"
+color white "\|"
+
+## ── Multiline strings ────────────────────────────────────────────────────────
+## grammar: punctuation.definition.string.begin.tjson
+##          punctuation.definition.string.end.tjson
+##          markup.raw.block.tjson
+## Triple before double before single to avoid shorter patterns swallowing longer delimiters
+color brightyellow start="```" end="```"
+color brightyellow start="``" end="``"
+color brightyellow start="`" end="`"
+
+## ── Comments ──────────────────────────────────────────────────────────────────
+## grammar: ^ *//.*$  →  comment.line.double-slash.tjson
+## Any number of spaces before // (not necessarily even — per grammar comment)
+## Last rule: overrides everything on comment lines
+color cyan "^ *//.*$"

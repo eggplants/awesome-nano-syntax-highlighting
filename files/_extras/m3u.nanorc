@@ -1,0 +1,25 @@
+# Source: https://github.com/galenguyer/nano-syntax-highlighting/blob/6f7cb16bf238fa5c55995377ec9d1d3fa9b9515f/m3u.nanorc
+# License: GPL-3.0-or-later
+
+syntax "m3u" "\.(m3u|m3u8)$"
+
+# Header text
+color brightcyan "^#EXTINF.*,[^,]*$"
+
+# Header property values
+color brightyellow "^#[^:]*:[^ ,]*"
+color brightyellow "=[^ ,]*"
+color brightyellow "=[\"][^\"]*[\"]"
+
+# Header property keys
+color brightgreen "[a-zA-Z-]*="
+
+# Headers
+color brightred "^#EXT[-A-Z]*:"
+color brightmagenta "^#EXTM3U"
+
+# Separators
+color normal "[,=]"
+
+# URLs
+color normal "^[^#].*"

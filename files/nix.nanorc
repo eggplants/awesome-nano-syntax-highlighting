@@ -1,0 +1,49 @@
+# Source: https://github.com/Noiseko/nano-nix/blob/8856c10a5492584259da3abe65d7562a363d7f45/nix.nanorc
+# License: NOASSERTION (no license found upstream)
+
+## Syntax Highlighting for Nix (*.nix)
+## Based on nano configuration for Rust
+
+syntax "nix" "\.nix$"
+comment "#"
+
+# Reserved words / Keywords (Matched to Rust's Yellow Keywords)
+color yellow "\<(abort|import|inherit|with|or|rec|assert)\>"
+color yellow "=|;|\}|\{"
+color yellow "\."
+
+# Attributes, Builtins, & Functions (Matched to Rust's Magenta fn/Types/Structs)
+color magenta "\<(builtins|pkgs|lib|config|inputs|outputs|stdenv|fetchFromGitHub)\>"
+color magenta "([A-Za-z_][A-Za-z0-9_-]*)[[:space:]]*="
+icolor magenta "description ="
+
+# Literal values: numbers & booleans (distinct from magenta attribute keys)
+color cyan "( |=|:|\[|\(|,)[0-9]+"
+color cyan " [0-9]+ "
+color cyan "\<(true|false|null)\>"
+
+# Strings (Matched to Rust's Green Strings)
+color green "\"(\\.|[^\"\\])*\""
+color green "'(\\.|[^'\\])*'"
+color green start="''" end="''"
+icolor green "url[[:space:]]*=.*"
+icolor green "homepage[[:space:]]*=.*"
+
+# Embedded Nix Interpolation Blocks (Pops out inside the green strings)
+color brightred "\$\{[^\}]*\}"
+
+# Embedded Bash Elements (Inside multi-line strings)
+icolor brightcyan "^[0-9A-Z_]+\(\)"
+color yellow "\<(break|case|continue|do|done|elif|else|esac|exit|fi|for|function|if|in|read|return|select|shift|then|time|until|while)\>"
+color yellow "\<(declare|eval|exec|export|let|local)\>"
+color brightred "\$[-0-9@*#?$!]" "\$[[:alpha:]_][[:alnum:]_]*"
+
+# Comments (Matched to Rust's Blue Comments)
+color blue "(^|[[:space:]])#.*$"
+color blue start="(^|[[:space:]])/\*" end="\*/"
+
+# Some common markers (Matched to Rust's Brightcyan Markers)
+color brightcyan "\<(XXX|TODO|FIXME|\?\?\?)\>"
+
+## Trailing spaces (Matched to Rust's Background Green Warning)
+color ,green "[[:space:]]+$"

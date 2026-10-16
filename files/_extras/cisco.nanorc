@@ -1,0 +1,38 @@
+# Source: https://github.com/ccie5022/cisco.nanorc/blob/ad116ddad917b3a18f7cc1bce36d55b0728aba06/cisco.nanorc
+# License: GPL-3.0
+
+syntax "cisco" "\.cfg$" "\.cisco$" "\.asa$"
+header "Using username*"
+
+## Control
+icolor magenta "\<(if|else|for|function|case|esac|in|select|until|while|do|elif|then|set|\.|done|fi)\>"
+
+## Brackets and redirects
+icolor yellow "[(){}[;|<>]"
+icolor yellow "\]"
+
+## Top of Config Global
+icolor yellow "\<(service|hostname|domain-name|enable password|)\>"
+
+## Crypto
+
+
+## Interface
+color green "interface.*$"
+
+## access-list
+
+## object
+icolor blue "object network.*$"
+icolor blue "object-group.*$"
+
+## Strings
+#icolor blue "\"(\\.|[^\"])*\""
+#icolor blue "'(\\.|[^\'])*'"
+
+## Variables
+# NOTE: Keep this section below the Strings section, such that Variables are highlighted inside strings.
+color cyan start="[$@%]" end="([[:alnum:]]|_)*"
+
+## Comments
+color green "#.*$"

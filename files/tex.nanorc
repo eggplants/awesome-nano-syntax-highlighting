@@ -1,0 +1,14 @@
+# Source: https://git.savannah.gnu.org/cgit/nano.git/tree/syntax/tex.nanorc?id=9a716c9993e6e83d46c5640974fc832f68705a6c
+# License: GPL-3.0-or-later
+
+## Syntax highlighting for TeX files.
+
+syntax tex "\.tex$"
+magic "(La)?TeX document"
+comment "%"
+
+linter chktex -v0 -q -I
+
+color green "\\.|\\[[:alpha:]]*"
+color magenta "[{}]"
+color blue "(^|[^\])%.*"

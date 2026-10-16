@@ -1,0 +1,31 @@
+# Source: https://github.com/pic16f874/isc-nanorc/blob/6c751b04495675b172dbf361992b32dd0684b0fe/isc-cos.nanorc
+# License: NOASSERTION (no license found upstream)
+
+syntax "isc_cos-file" "\.(cos|cls)$"
+
+#color red "\<[-+]?([1-9][0-9]*|0)?\>"
+
+
+color brightmagenta "[Cc]lass|[Ee]xtends|[Pp]arameter|[Ii]ndex| [Oo]n |[Pp]roperty| [Aa]s |[Mm]ethod|[Cc]lass[Mm]ethod|[Ss]torage"
+color brightgreen "[Ss]et |[Kk]ill |[Ww]rite|[Dd]o |[Ww]hile|[Ff]or |[Ii]f |[Ee]lse|[Tt]ry|[Cc]atch|[Qq]uit|[Hh]alt"
+
+color brightyellow,green "\${3}OK"
+
+# Strings.  In general you will want your strings and comments to come last,
+# because highlighting rules are applied in the order they are read in.
+color yellow ""([^"]|\\")*"" "<[^[:blank:]=]*>"
+# Multiline strings.  This regex is VERY resource intensive,
+# and sometimes colours things that shouldn't be coloured.
+###color brightyellow start=""(\\.|[^"])*\\[[:space:]]*$" end="^(\\.|[^"])*""
+
+color blue "^[[:space:]]*;.*$"
+color blue "^[[:space:]]*#;.*$"
+color blue "^[[:space:]]*//.*$"
+#color blue "^///.*$"
+
+# Reminders.
+color brightwhite,yellow "\<(FIXME|TODO|XXX)\>"
+
+# Trailing whitespace.
+#color ,green "[[:space:]]+$"
+

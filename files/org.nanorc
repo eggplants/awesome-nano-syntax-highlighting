@@ -1,0 +1,48 @@
+# Source: https://github.com/ogswag/org-syntax-for-nano/blob/eca10acb7fc97b356c596e5ef0d48329d0d7bf7f/org.nanorc
+# License: MIT
+
+## Org-mode syntax highlighting for nano
+## Save as: /usr/share/nano/org.nanorc
+## Then add to /etc/nanorc or ~/.nanorc:
+##   include "/usr/share/nano/org.nanorc"
+
+syntax "org" "\.org(_archive)?$"
+
+color brightred "^\* .*$"
+color brightyellow "^\*\* .*$"
+color brightgreen "^\*\*\* .*$"
+color brightblue "^\*\*\*\*+ .*$"
+color magenta "\*[^*\n]+\*"
+color blue "\[\[.*\]\]" "https?://.*"
+color white "^\s*[-+*] "
+color green "\[X\]"
+color yellow "\[[ -]\]"
+color red "TODO"
+color green "DONE"
+
+# List bullets (-, +, * at start of line)
+color magenta "^[ \t]*[-+*][ \t]+.*$"
+
+# Checkboxes [ ], [X], [-]
+color brightwhite "\[[ Xx-]\]"
+
+# Horizontal rules: ----- or ===== etc.
+color brightblue "^[ \t]*[-=]+[ \t]*$"
+
+# Simple tables (lines starting and ending with |)
+color brightblue "^[ \t]*\|.*\|[ \t]*$"
+
+# Source/example/quote blocks (case-insensitive matching)
+icolor brightyellow "^#\+BEGIN_SRC[ \t]+[a-zA-Z0-9_]+.*$"
+icolor brightyellow "^#\+END_SRC[ \t]*$"
+icolor brightyellow "^#\+BEGIN_EXAMPLE.*$"
+icolor brightyellow "^#\+END_EXAMPLE[ \t]*$"
+icolor brightyellow "^#\+BEGIN_QUOTE.*$"
+icolor brightyellow "^#\+END_QUOTE[ \t]*$"
+
+# ~code~ and =verbatim=
+color yellow "~[^~ \t][^~]*~"
+color yellow "=[^= \t][^=]*="
+
+# Comments (lines starting with # not followed by +)
+color brightblack "^#[^+].*$"

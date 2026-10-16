@@ -1,0 +1,38 @@
+# Source: https://github.com/sls1005/kotlin-nanorc/blob/2f13a86afa942d9f6fc41fcfe49b2c34301680b2/kotlin.nanorc
+# License: MIT
+
+# Syntax highlighting for Kotlin
+
+syntax kotlin "\.kts?$"
+comment "/*|*/"
+
+# Symbols
+color brightmagenta "@(\S)*($|\s)"
+
+# Keywords
+#    Hard
+color brightblue "\<(this|typeof|true|false|class|is|super|fun|return|typealias|when|val|var|if|else|do|for|while|break|continue|try|throw|object|as|interface|in|null|package)\>"
+
+#    Soft
+color blue "\<(init|field|where|dynamic|constructor|catch|delegate|property|receiver|by|import|value|setparam|set|param|finally|get|file)\>"
+
+#    Modifiers
+color sky "\<(lateinit|const|data|sealed|final|open|enum|reified|inline|noinline|crossinline|actual|annotation|out|expect|vararg|suspend|external|internal|inner|companion|override|abstract|protected|private|public|tailrec|infix|operator)\>"
+
+# Special
+color lime "\<it\>"
+
+# Shebang
+#    See https://kotlinlang.org/docs/reference/grammar.html#kotlinFile
+color lime "#!.*"
+
+# Characters
+color green "'([^\\']|\\([\\$bnrt'"]|u([0-9]|[A-Fa-f]){4}))'"
+
+# Comments
+color sand "//.*"
+color sand start="/\*" end="\*/"
+
+# Strings
+color brightgreen ""([^\\"]|\\([\\$bnrt'"]|u([0-9]|[A-Fa-f]){4}))*""
+color brightgreen start=""""" end="""""

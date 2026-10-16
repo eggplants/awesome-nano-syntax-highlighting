@@ -1,0 +1,82 @@
+# Source: https://github.com/StevieEngbrock/english.nanorc/blob/01197c9b442e5db36ef985a4fdefe9bf5d231551/english.nanorc
+# License: Unlicense
+
+syntax english ".txt"
+
+# end of sentence
+color brightred "\.|\?|\!"
+
+
+# assignment
+
+icolor brightmagenta "equals|equal"
+
+# quotes
+
+icolor orange "'([^'\]|\\.)*'|"([^"\]|\\.)*"|'''|""""
+
+
+# logic
+
+icolor brightcyan "\<(and|or|not|if|else|when|while|until|but|all|none|any)\>"
+icolor teal ";|,"
+
+# numbers
+icolor brightgreen "\<(one|two|three|four|five|six|seven|eight|nine|ten)\>"
+icolor brightgreen "\<(eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen)\>"
+icolor brightgreen "\<(twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)\>"
+icolor brightgreen "\<(hundred|thousand|ten thousand|hundred thousand)\>"
+icolor brightgreen "\<(million|billion|trillion)\>"
+icolor brightgreen "[0-9]+"
+
+# relationships
+
+icolor brightyellow "\<(to|from|with|of|in|on|off|as|at|by|like)\>"
+
+# existence present or equality
+
+icolor pink "\<(be|am|is|are|equal|equals)\>"
+
+# existence past
+
+icolor pink "\<(was|were)\>"
+
+# existence negation
+
+icolor beet "\<(weren't|wouldn't|wasn't|couldn't|can't|won't)\>"
+icolor beet "\<(shouldn't|shant|aren't)\>"
+icolor beet "\<(are not)\>"
+
+# single
+
+icolor orange "\<(a|the|that|it|one|this)\>"
+
+# pronouns
+
+icolor peach "\<(i\b|he|she|they|you|we|them|her|thee|thou)\>"
+
+
+# ownership
+
+icolor plum "\<(me|my|has|had|have|mine|his|her's|your|your's)\>"
+
+#future
+
+icolor mint "\<(will|won't)\>"
+
+# past
+
+icolor sky "\<(would|could|was)\>"
+
+# present
+
+icolor blue "\<(can)\>"
+
+# action
+
+icolor latte "\<(do|does|did|go|went)\>"
+
+# markdown like
+
+icolor beet "-"
+icolor blue "# (.*)"

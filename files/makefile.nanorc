@@ -1,0 +1,29 @@
+# Source: https://git.savannah.gnu.org/cgit/nano.git/tree/syntax/makefile.nanorc?id=9a716c9993e6e83d46c5640974fc832f68705a6c
+# License: GPL-3.0-or-later
+
+## Syntax highlighting for Makefiles.
+
+syntax makefile "(^|/)((GNU)?m|M)akefile[^/]*$|\.(make|mk)$"
+magic "makefile script"
+
+tabgives "	"
+comment "#"
+
+# Assignments.
+color red " (:?:|\+|\?)?= "
+
+# Keywords.
+color magenta "^(if|ifn?def|ifn?eq|else|endif|(-|s)?include)\>"
+color magenta "^((override +)?(un)?define|endef|(un)?export|private|vpath)\>"
+
+# Variable expansions.
+color blue "\$+[{(][[:alnum:]_-]+[})]"
+
+# Targets.
+color brightblue "^[^	].*:"
+
+# Comments.
+color green "(^|[[:blank:]]+)#.*"
+
+# Trailing whitespace.
+color ,green "[[:space:]]+$"

@@ -1,0 +1,31 @@
+# Source: https://git.savannah.gnu.org/cgit/nano.git/tree/syntax/xml.nanorc?id=9a716c9993e6e83d46c5640974fc832f68705a6c
+# License: GPL-3.0-or-later
+
+## Syntax highlighting for XML files.
+
+## Original author:  Josef Schugt
+
+syntax xml "\.([jrsx]html?|jnlp|mml|pom|rng|sgml?|svg|w[as]dl|wsdd|xjb|xml|xs(d|lt?)|xul)$"
+header "<\?xml.*version=.*\?>"
+magic "(XML|SGML) (sub)?document"
+comment "<!--|-->"
+
+# First the entire content of the tag (for the attributes):
+color green start="<" end=">"
+
+# The angled brackets and the name of the tag:
+color cyan "<[^> ]+|/?>"
+
+# The strings inside the tag:
+color magenta ""[^"]*""
+
+# Prolog stuff:
+color #888 "<\?.+\?>|<!DOCTYPE[^>]+>|\]>"
+color #888 start="<!DOCTYPE[^>]*$" end="^[^<]*>"
+
+# Comments:
+color yellow start="<!--" end="-->"
+
+# Entities (custom and predefined):
+color pink "&[^; ]+;"
+color red "&(amp|apos|gt|lt|quot);"

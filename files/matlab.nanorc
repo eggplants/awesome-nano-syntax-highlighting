@@ -1,0 +1,15 @@
+# Source: https://github.com/pazmivaniye/nanorc/blob/834ba5d8c14be9921378a2202e263e2ca4f95fdc/matlab.nanorc
+# License: MIT
+
+syntax "matlab" "\.m$"
+comment "%"
+color black,white "[^ -~]"
+
+# Comments.
+color italic,lightblack "(%|\.\.\.).*"
+color italic,lightblack start="%\{" end="%\}"
+
+# Section headings.
+color bold,lightwhite "^\s*%%.*"
+
+color ,white "\s+$"

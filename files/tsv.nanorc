@@ -1,0 +1,18 @@
+# Source: https://github.com/remisalmon/nanorc/blob/8be7973f1acdcbdfdda88f0cb9cb91a19e84954f/tsv.nanorc
+# License: NOASSERTION (no license found upstream)
+
+# Syntax highlighting for TSV files.
+
+syntax tsv "\.tsv$"
+
+tabgives "	"
+
+# Tabs.
+# https://www.iana.org/assignments/media-types/text/tab-separated-values
+color ,magenta "	"
+
+# Strings.
+color green ""([^"\]|\\.)*""
+
+# Trailing whitespaces.
+color ,green " +$"

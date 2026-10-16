@@ -1,0 +1,14 @@
+# Source: https://github.com/galenguyer/nano-syntax-highlighting/blob/6f7cb16bf238fa5c55995377ec9d1d3fa9b9515f/conf.nanorc
+# License: GPL-3.0-or-later
+
+## Here is an example for nanorc files.
+##
+syntax "Conf" "\.c[o]?nf$"
+## Possible errors and parameters
+## Strings
+icolor white ""(\\.|[^"])*""
+## Comments
+icolor brightblue "^[[:space:]]*#.*$"
+icolor cyan "^[[:space:]]*##.*$"
+## Trailing spaces
+color ,green "[[:space:]]+$"

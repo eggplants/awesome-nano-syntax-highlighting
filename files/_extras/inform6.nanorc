@@ -1,0 +1,24 @@
+# Source: https://github.com/danburk10/inform6.nanorc/blob/f491ea2e0b0210448336e4b99d33c2b4131addcc/inform6.nanorc
+# License: NOASSERTION (no license found upstream)
+
+## Syntax highlighting for inform6
+
+syntax inform6 "\.inf$"
+magic "inf"
+comment "//"
+
+# comments
+color cyan "^!.*"
+
+color green "\<(Object|object|with description|has)\>"
+# color red "\<(break|case|catch|continue|default|do|else|finally|for|if|return|switch|throw|try|while)\>"
+# color cyan "\<(abstract|class|extends|final|implements|import|instanceof|interface|native)\>"
+# color cyan "\<(package|private|protected|public|static|strictfp|super|synchronized|throws|volatile)\>"
+# color red ""[^"].*""
+color red start=""" end="""
+color yellow "\<(.+\_to)\>"
+# color blue "//.*"
+# color blue start="(Object)" end="with"
+# color brightblue start="/\*\*" end="\*/"
+# color ,green "[[:space:]]+$"
+

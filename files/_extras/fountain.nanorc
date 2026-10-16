@@ -1,0 +1,40 @@
+# Source: https://github.com/tdeshazo/fountain_nanorc/blob/f7be7202d11dade840a6b574d8f3ffe0dea53591/fountain.nanorc
+# License: NOASSERTION (no license found upstream)
+
+syntax "fountain" "\.fountain$" "\.spmd$"
+
+# Scene headers
+color brightblue "^(INT|EXT|EST|INT./EXT|I/E)[. ].*$"
+color brightblue "^[. ][^.].*TO:$"
+
+# Character names
+color brightyellow "^[[:upper:] ]+(\s*\([[:upper:][:lower:] ']*\))?$"
+color brightyellow "^[@][[:alnum:][:blank:]]*(\s*\([[:upper:][:lower:] ']*\))?$"
+
+# Parentheticals
+color magenta "^[\t ]*\(.*\)"
+
+# Transitions
+color brightred "^(FADE (IN|OUT)|CUT TO:|DISSOLVE TO:|SMASH CUT TO:|QUICK CUT TO:|FADE TO:|>)[.: ]*$"
+
+# Title page elements
+color brightgreen "^(Title|Credit|Author|Authors|Source|Draft date|Contact|Copyright):"
+
+# Notes and comments
+color brightblack "^(\[\[).*(\]\])"
+color brightblack "^//.*"
+
+# Bold and italic markup
+color cyan "(\*\*|__).*(\*\*|__)"
+color cyan "(\*|_).*(\*|_)"
+
+# Page breaks
+color white "^===[=]*$"
+
+# Centered text
+color brightcyan "^>[^<]*<$"
+
+# Section headings
+color brightmagenta "^#[[:blank:]].*$"
+color brightmagenta "^##[[:blank:]].*$"
+color brightmagenta "^###[[:blank:]].*$"

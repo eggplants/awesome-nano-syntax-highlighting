@@ -1,0 +1,173 @@
+# Source: https://github.com/kabirdkng/pact-nano-syntax/blob/230a59978cbd4d0c2d757745baef10247454d4ba/pact.nanorc
+# License: BSD-3-Clause
+
+## Vibrant and modern syntax highlighting for Pact smart contract language
+## Optimized for visual appeal and coding enjoyment
+
+syntax "pact" "\.(pact|repl)$"
+comment ";"
+
+## Core Syntax Elements
+
+# Comments - Soft calming blue for readability
+color brightblue "^[[:space:]]*;.*"
+
+# Strings - Warm amber for readability
+color brightyellow ""([^"]|(\\"))*""
+
+# Numbers - Ocean blue
+color brightcyan "\<[-]?[0-9]+\>"
+color brightcyan "\<[-]?[0-9]+\.[0-9]+\>"
+
+# Structure - Pure white for clarity
+color white "[\(\)\[\]\{\}]"
+
+## Keywords & Definitions
+
+# Module Keywords - Royal purple
+color brightmagenta "\<(module|interface)\>"
+
+# Definition Keywords - Golden yellow
+color yellow "\<(defun|defpact|defconst|defschema|deftable|defcap)\>"
+
+# Function Names - Bright coral
+color brightred "(?<=\<(defun|defpact|defcap))[[:space:]]+[a-zA-Z0-9_-]+"
+
+# Control Flow - Emerald green
+color brightgreen "\<(let|let\*|step|step-with-rollback|if|when|else|cond|map|fold|filter)\>"
+
+## Types & Values
+
+# Type Annotations - Electric purple
+color magenta ":[a-zA-Z][a-zA-Z0-9-]*"
+
+# Built-in Types - Deep magenta
+color magenta ":(integer|decimal|time|bool|string|list|value|keyset|guard|object|table)"
+
+# Booleans - Sky blue
+color cyan "\<(true|false)\>"
+
+## Special Elements
+
+# Meta Variables - Electric blue
+color brightblue "@[a-zA-Z0-9_-]+"
+
+# Symbols - Soft violet
+color brightmagenta "'[a-zA-Z0-9_-]+"
+
+# Critical Keywords - Vivid red
+color red "\<(error|enforce|require|with-capability)\>"
+
+# Database Operations - Spring green
+color green "\<(insert|update|read|write|select|where|keys|txids)\>"
+
+# Binding Operators - Crystal white
+color white "(:=)"
+
+## Documentation Elements
+
+# Doc Strings - Mint green
+color brightgreen "@doc[[:space:]]+\"[^\"]*\""
+
+# Property Keywords - Turquoise
+color cyan "\<(properties|property|invariant|invariants|bless)\>"
+
+## Module System
+
+# Use/Implements - Azure blue
+color blue "\<(use|implements)\>"
+
+# Function Calls - Warm yellow
+color yellow "\<[a-zA-Z_][a-zA-Z0-9_-]*(?=\s*\()"
+
+## Code Quality
+
+# Trailing Whitespace - Subtle indicator
+color ,green "[[:space:]]+$"
+## Enhanced Pact syntax highlighting for nano
+## Based on VS Code syntax definitions with vibrant color scheme
+
+syntax "pact" "\.(pact|repl)$"
+comment ";"
+
+## Core Syntax Elements
+
+# Comments 
+color brightblue "^[[:space:]]*;.*"
+
+# Strings (quoted content)
+color brightyellow ""([^"]|(\\"))*""
+
+# Numbers - Integer and Decimal
+color cyan "\<-?[0-9]+\>" 
+color cyan "\<-?[0-9]+\.[0-9]+\>"
+
+# Structural Elements
+color white "[\(\)\[\]\{\}]"
+
+## Keywords & Definitions
+
+# Module System Keywords
+color brightmagenta "\<(module|interface|namespace|use|implements)\>"
+
+# Definition Keywords
+color yellow "\<(defun|defpact|defconst|defschema|deftable|defcap|defproperty)\>"
+
+# Control Flow & Binding
+color brightgreen "\<(let|let\*|step|step-with-rollback|if|when|else|cond|map|fold|filter|begin-tx|commit-tx|rollback-tx)\>"
+
+# Special Forms
+color brightred "\<(bless|create-user-guard|create-pact-guard|create-module-guard|keyset-ref-guard)\>"
+
+## Types & Values
+
+# Type Annotations
+color magenta ":[a-zA-Z][a-zA-Z0-9-]*"
+
+# Built-in Types
+color magenta ":(integer|decimal|time|bool|string|list|value|keyset|guard|object|table|module|row)"
+
+# Boolean and Constants
+color cyan "\<(true|false|null)\>"
+
+## Special Elements
+
+# Meta Variables and Docs
+color brightblue "@(doc|model|event|param|property|data|language|grant|auth|managed|version)[a-zA-Z0-9_-]*"
+
+# Symbols and Keys
+color brightmagenta "'[a-zA-Z0-9_-]+"
+
+# Critical Keywords
+color red "\<(error|enforce|enforce-one|enforce-guard|require|with-capability|compose-capability)\>"
+
+# Database Operations
+color green "\<(insert|update|read|write|select|where|keys|txids|with-read|with-default-read|create-table|describe-table|describe-module)\>"
+
+# Keyset Operations
+color brightcyan "\<(define-keyset|read-keyset|keyset-ref|keys-all|keys-any|keys-2)\>"
+
+# Binding Operators
+color white "(:=)"
+
+## Documentation Elements
+
+# Property Keywords
+color cyan "\<(properties|property|invariant|invariants)\>"
+
+# Function Calls (must come after other keyword definitions)
+color yellow "\<[a-zA-Z_][a-zA-Z0-9_-]*[[:space:]]*\("
+
+## Code Quality
+
+# Trailing Whitespace - Subtle indicator
+color ,green "[[:space:]]+$"
+
+# List Brackets
+color white "[\[\]]"
+
+## Mathematical Operators
+color brightmagenta "[-+/*=<>]"
+
+## String Escapes
+color brightred "\\[\"'\\]"

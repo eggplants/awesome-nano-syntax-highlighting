@@ -1,0 +1,157 @@
+# Source: https://github.com/njjenkins/R-nanorc/blob/a977a24bd73487d7c07fb4a38000e35547c22314/R.nanorc
+# License: GPL-3.0-or-later
+
+## Syntax highlighting for R files
+## Drop in ~/.nano/ and add `include "~/.nano/R.nanorc"` to ~/.nanorc
+
+syntax "R" "\.R$"
+header "^#!.*/Rscript"
+
+## Reserved words (including '...', '..1', etc.)
+color brightgreen "(\<(break|else|for|function|if|in|next|repeat|return|while)\>|[.]{3,3}|[.]{2,2}[0-9]+)"
+
+## Assignment operators (<-, <<-, ->, ->>)
+color green "(->>?|<{1,2}-)"
+
+## Formula tilde
+color green "~"
+
+## Namespace operators (:::  before :: so the longer match wins)
+color green ":::"
+color green "::"
+
+## Native pipe (R 4.1+) and data.table walrus operator
+color green "\|>|:="
+
+## Delimiters
+color green "[\)\(,;]+|[\{\}]+|[][]+"
+
+## Boolean constants
+color brightblue "\<(TRUE|FALSE|NA)\>"
+
+## Other special constants
+color brightblue "\<(Inf|NA_character_|NA_complex_|NA_integer_|NA_real_|NaN|NULL|LETTERS|letters|pi)\>"
+
+## Special operators (%>%, %in%, %*%, %o%, %chin%, etc.)
+color brightcyan "%[^%]*%"
+
+## Integers
+color brightred "\<[0-9]+[iL]?\>"
+
+## Floating-point numbers
+color brightred "\<([0-9]+[Ee][-+]?[0-9]+|([0-9]*\.[0-9]+|[0-9]+\.)([Ee][-+]?[0-9]+)?)[i]?\>"
+
+## Backtick-quoted names
+color brightmagenta "`[^`]*`"
+
+## $ and @ slot/field accessors
+color brightwhite "[@$][a-zA-Z.][a-zA-Z0-9._]*"
+
+################################################################################
+## Package-specific function highlighting (alphabetical by package)
+## To add a package: copy any section below and replace function names.
+################################################################################
+
+## arrow — parquet / Arrow dataset I/O
+color brightcyan "\<(read_parquet|write_parquet|open_dataset|write_dataset|collect|as_arrow_table|arrow_table|read_csv_arrow|read_feather|write_feather|read_ipc_file|write_ipc_file|schema|field)\>"
+
+## assertthat — readable assertions
+color brightcyan "\<(assert_that|see_if|validate_that|is\.flag|is\.string|is\.count|is\.number|not_empty|noNA|are_equal)\>"
+
+## broom — tidy model output
+color brightcyan "\<(tidy|glance|augment)\>"
+
+## data.table — fast in-memory data manipulation
+color brightcyan "\<(data\.table|as\.data\.table|is\.data\.table|fread|fwrite|setDT|setDF|setkey|setkeyv|setorder|setorderv|setnames|setcolorder|rbindlist|dcast|melt|merge|tstrsplit|uniqueN|nafill|shift|frollmean|frollsum|frollapply|CJ|SJ|fifelse|fcase|fcoalesce|fintersect|fsetdiff|funion|frank|frankv|rowidv|rowid|copy|setDTthreads|getDTthreads|tables|key|haskey|indices)\>"
+## data.table special variables: \< word boundary cannot precede a dot (dot is non-word), so matched separately
+color brightcyan "\.SDcols\>|\.SD\>|\.N\>|\.GRP\>|\.NGRP\>|\.BY\>|\.I\>"
+
+## DBI / duckdb — database connectivity
+color brightcyan "\<(dbConnect|dbDisconnect|dbGetQuery|dbSendQuery|dbFetch|dbClearResult|dbExecute|dbWriteTable|dbReadTable|dbListTables|dbExistsTable|dbRemoveTable|duckdb|duckdb_register|duckdb_unregister)\>"
+
+## dplyr / tidyr / purrr — tidyverse data manipulation
+color brightcyan "\<(mutate|transmute|filter|select|arrange|summarize|summarise|group_by|ungroup|rename|rename_with|distinct|slice|slice_head|slice_tail|slice_min|slice_max|slice_sample|pull|count|tally|add_count|add_tally|across|if_any|if_all|if_else|case_when|case_match|coalesce|n|n_distinct|row_number|cur_group_id|cur_group|lead|lag|left_join|right_join|inner_join|full_join|anti_join|semi_join|cross_join|bind_rows|bind_cols|rowwise|nest|unnest|unnest_wider|unnest_longer|hoist|pivot_longer|pivot_wider|separate|separate_wider_delim|separate_wider_regex|separate_wider_position|unite|drop_na|replace_na|fill|complete|expand|expand_grid|starts_with|ends_with|contains|matches|everything|all_of|any_of|last_col|rownames_to_column|column_to_rownames|map|map2|pmap|imap|map_dbl|map_chr|map_int|map_lgl|map_df|map_vec|walk|walk2|pwalk|reduce|accumulate|keep|discard|compact|pluck|chuck|every|some|none|tibble|as_tibble|tribble|enframe|deframe|glimpse)\>"
+
+## estimatr — regression with robust standard errors
+color brightcyan "\<(lm_robust|iv_robust|difference_in_means|horvitz_thompson|commarobust)\>"
+
+## fixest — fast fixed effects estimation
+color brightcyan "\<(feols|feglm|fepois|fenegbin|femlm|feNmlm|etable|esttex|esttable|coefplot|iplot|fixef|did_means|did_estimate_yearly_effects|sunab|i|hat_values_fixest|setFixest_fml|setFixest_dict|fitstat|wald|ref|poly|l|f|d|bin|csteps|smpl|fitstat_register)\>"
+
+## forcats — factor manipulation
+color brightcyan "\<(fct_relevel|fct_reorder|fct_reorder2|fct_collapse|fct_lump|fct_lump_n|fct_lump_prop|fct_lump_min|fct_recode|fct_rev|fct_shift|fct_shuffle|fct_drop|fct_expand|fct_na_value_to_level|fct_infreq|fct_inorder|fct_inseq|as_factor|lvls_reorder|lvls_expand|lvls_union)\>"
+
+## GenericML / ranger / glmnet / xgboost — machine learning
+color brightcyan "\<(GenericML|setup_X1|setup_Z|setup_diff|setup_vcov|ranger|importance|treeInfo|glmnet|cv\.glmnet|xgboost|xgb\.train|xgb\.cv|xgb\.DMatrix)\>"
+
+## ggplot2 — grammar of graphics
+color brightcyan "\<(ggplot|aes|aes_string|vars|after_stat|after_scale|stage|annotate|geom_point|geom_jitter|geom_line|geom_path|geom_bar|geom_col|geom_histogram|geom_freqpoly|geom_density|geom_density_2d|geom_boxplot|geom_violin|geom_smooth|geom_ribbon|geom_errorbar|geom_errorbarh|geom_pointrange|geom_linerange|geom_crossbar|geom_text|geom_label|geom_hline|geom_vline|geom_abline|geom_segment|geom_spoke|geom_tile|geom_raster|geom_contour|geom_contour_filled|geom_polygon|geom_map|geom_step|geom_area|geom_rug|geom_sf|facet_wrap|facet_grid|facet_null|free|scale_x_continuous|scale_y_continuous|scale_x_log10|scale_y_log10|scale_x_sqrt|scale_y_sqrt|scale_x_reverse|scale_y_reverse|scale_x_discrete|scale_y_discrete|scale_x_date|scale_y_date|scale_x_datetime|scale_y_datetime|scale_color_manual|scale_colour_manual|scale_fill_manual|scale_linetype_manual|scale_shape_manual|scale_size_manual|scale_alpha_manual|scale_color_brewer|scale_colour_brewer|scale_fill_brewer|scale_color_distiller|scale_fill_distiller|scale_color_gradient|scale_color_gradient2|scale_fill_gradient|scale_fill_gradient2|scale_color_viridis_[cd]|scale_fill_viridis_[cd]|scale_color_identity|scale_fill_identity|coord_cartesian|coord_flip|coord_fixed|coord_polar|coord_trans|sec_axis|expansion|labs|xlab|ylab|ggtitle|theme|theme_set|theme_update|theme_bw|theme_minimal|theme_classic|theme_void|theme_dark|theme_light|theme_gray|theme_grey|element_text|element_line|element_rect|element_blank|rel|unit|margin|ggsave|guides|guide_legend|guide_colorbar|guide_colourbar|guide_bins|guide_coloursteps|position_dodge|position_dodge2|position_jitter|position_jitterdodge|position_stack|position_fill|position_nudge|position_identity|ggplotGrob|ggplot_build|last_plot|update_geom_defaults)\>"
+
+## ggplot2 extensions (ggpubr, ggthemes, gridExtra)
+color brightcyan "\<(ggarrange|ggscatter|ggboxplot|ggbarplot|gghistogram|ggdensity|ggline|ggpaired|ggdotplot|ggpar|ggexport|stat_compare_means|grid\.arrange|arrangeGrob|tableGrob|theme_economist|theme_fivethirtyeight|theme_wsj|theme_stata|theme_tufte|scale_color_colorblind|scale_fill_colorblind|scale_color_few|scale_fill_few)\>"
+
+## glue — string interpolation
+color brightcyan "\<(glue|glue_sql|glue_data|glue_data_sql|glue_collapse|glue_safe|as_glue)\>"
+
+## here / fs — portable path management
+color brightcyan "\<(here|path|path_abs|path_rel|path_dir|path_file|path_ext|dir_ls|dir_create|dir_delete|dir_exists|file_exists|file_copy|file_move|file_delete|file_create)\>"
+
+## janitor / skimr — data inspection and cleaning
+color brightcyan "\<(clean_names|tabyl|adorn_totals|adorn_percentages|adorn_pct_formatting|adorn_ns|adorn_title|adorn_rounding|get_dupes|remove_empty|remove_constant|skim|skim_without_charts|yank)\>"
+
+## kableExtra — publication-quality tables in LaTeX / HTML
+color brightcyan "\<(kable|kbl|kable_styling|column_spec|row_spec|add_header_above|add_indent|footnote|pack_rows|group_rows|collapse_rows|scroll_box|landscape|save_kable|kable_paper|kable_classic|kable_minimal)\>"
+
+## lmtest / sandwich — hypothesis tests and robust covariance matrices
+color brightcyan "\<(coeftest|waldtest|lrtest|bgtest|bptest|dwtest|raintest|vcovCL|vcovHC|vcovBS|vcovPC|vcovPL|vcovOPG|sandwich|meat|bread|meatCL|meatHC)\>"
+
+## lubridate — date and time manipulation
+color brightcyan "\<(ymd|ydm|mdy|myd|dmy|dym|ymd_hms|ymd_hm|ymd_h|mdy_hms|mdy_hm|dmy_hms|dmy_hm|parse_date_time|as_date|as_datetime|today|now|floor_date|ceiling_date|round_date|rollback|rollforward|year|month|week|isoweek|epiweek|day|yday|wday|qday|hour|minute|second|decimal_date|make_date|make_datetime|is\.Date|is\.POSIXct|is\.POSIXlt|with_tz|force_tz|tz|interval|duration|period|years|months|weeks|days|hours|minutes|seconds|dseconds|dminutes|dhours|ddays|dweeks|dyears|time_length|int_start|int_end|int_length|int_overlaps|int_shift|stamp|leap_year)\>"
+
+## mlr3 — machine learning framework
+color brightcyan "\<(lrn|tsk|rsmp|msr|po|benchmark|resample|BenchmarkResult|TaskClassif|TaskRegr|GraphLearner|AutoTuner|tnr|flt)\>"
+
+## modelsummary — regression tables and model summaries
+color brightcyan "\<(modelsummary|modelplot|datasummary|datasummary_skim|datasummary_df|datasummary_balance|datasummary_correlation|datasummary_crosstab)\>"
+
+## parallel — multicore computing
+color brightcyan "\<(detectCores|makeCluster|stopCluster|parLapply|parSapply|parApply|parRapply|mclapply|mcmapply|clusterExport|clusterEvalQ|clusterCall|registerDoParallel|foreach)\>"
+
+## randomizr — random assignment for experiments
+color brightcyan "\<(complete_ra|block_ra|cluster_ra|block_and_cluster_ra|declare_ra|conduct_ra|obtain_condition_probabilities|complete_rs|block_rs|cluster_rs|block_and_cluster_rs|declare_rs|conduct_rs)\>"
+
+## readr / readxl / openxlsx — tabular file I/O
+color brightcyan "\<(read_csv|read_csv2|read_tsv|read_delim|read_fwf|write_csv|write_csv2|write_tsv|write_delim|read_lines|write_lines|read_excel|read_xlsx|read\.xlsx|write\.xlsx|loadWorkbook|saveWorkbook|addWorksheet|writeData)\>"
+
+## scales — axis label and number formatting
+color brightcyan "\<(comma|percent|dollar|scientific|comma_format|percent_format|dollar_format|number_format|label_comma|label_percent|label_dollar|label_number|label_scientific|label_date|label_date_short|label_bytes|label_ordinal|label_pvalue|number|rescale|squish|oob_squish|oob_censor|breaks_pretty|breaks_extended|breaks_log|breaks_width|date_breaks|date_format|date_labels|hue_pal|show_col|col2hcl)\>"
+
+## stargazer / xtable — LaTeX table output
+color brightcyan "\<(stargazer|xtable|xtableList|toLatex|print\.xtable)\>"
+
+## stringr — string manipulation
+color brightcyan "\<(str_c|str_dup|str_flatten|str_flatten_comma|str_glue|str_glue_data|str_detect|str_starts|str_ends|str_count|str_locate|str_locate_all|str_extract|str_extract_all|str_match|str_match_all|str_replace|str_replace_all|str_remove|str_remove_all|str_sub|str_sub_all|str_subset|str_which|str_length|str_pad|str_trunc|str_trim|str_squish|str_wrap|str_split|str_split_1|str_split_fixed|str_split_i|str_to_upper|str_to_lower|str_to_title|str_to_sentence|str_sort|str_order|str_unique|str_conv|str_view|str_escape|regex|fixed|coll|boundary)\>"
+
+## testthat — unit testing
+color brightcyan "\<(test_that|expect_equal|expect_identical|expect_equivalent|expect_error|expect_warning|expect_message|expect_true|expect_false|expect_null|expect_na|expect_length|expect_gt|expect_lt|expect_gte|expect_lte|expect_match|expect_output|expect_snapshot|test_file|test_dir|describe|it|skip|skip_if|skip_on_cran)\>"
+
+## viridis — perceptually uniform color scales
+color brightcyan "\<(viridis|magma|plasma|inferno|cividis|mako|rocket|turbo|viridis_pal|viridis_map|scale_color_viridis|scale_fill_viridis|scale_color_viridis_b|scale_fill_viridis_b)\>"
+
+## library() / require() — entire call highlighted so any package name is visible
+color yellow "\<(library|require)[ \t]*\([^)]*\)"
+
+## base R — dotted builtins (placed after package rules to override partial matches, e.g. 'path' inside file.path)
+color brightcyan "\<(data\.frame|as\.data\.frame|as\.numeric|as\.character|as\.logical|as\.integer|as\.double|as\.complex|as\.raw|as\.factor|as\.ordered|as\.Date|as\.POSIXct|as\.POSIXlt|as\.difftime|as\.list|as\.vector|as\.matrix|as\.array|as\.table|as\.function|as\.environment|as\.call|as\.name|as\.symbol|as\.expression|is\.numeric|is\.character|is\.logical|is\.integer|is\.double|is\.complex|is\.raw|is\.factor|is\.ordered|is\.Date|is\.list|is\.vector|is\.matrix|is\.array|is\.table|is\.function|is\.environment|is\.null|is\.na|is\.nan|is\.finite|is\.infinite|is\.recursive|is\.atomic|is\.primitive|is\.language|is\.call|is\.name|is\.symbol|is\.element|is\.data\.frame|do\.call|match\.arg|match\.call|match\.fun|on\.exit|sys\.call|sys\.function|sys\.frame|sys\.nframe|sys\.source|parent\.frame|file\.path|file\.exists|file\.copy|file\.rename|file\.remove|file\.create|file\.info|file\.access|file\.show|file\.append|list\.files|list\.dirs|Sys\.time|Sys\.Date|Sys\.sleep|Sys\.getenv|Sys\.setenv|Sys\.getwd|Sys\.setwd|Sys\.info|Sys\.glob|proc\.time|system\.time|read\.csv|read\.csv2|read\.table|read\.delim|read\.fwf|write\.csv|write\.csv2|write\.table|installed\.packages|available\.packages|install\.packages|update\.packages|remove\.packages|system\.file|path\.expand|packageVersion)\>"
+
+## Strings, double-quoted
+color brightyellow ""([^"]|(\\"))*""
+
+## Strings, single-quoted
+color brightyellow "'([^']|(\\'))*'"
+
+## Comments
+color magenta "#[^'].*$" "#$"
+
+## Roxygen-style comments (must follow the comments rule to override it)
+color cyan "#'.*$"

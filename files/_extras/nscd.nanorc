@@ -1,0 +1,8 @@
+# Source: https://github.com/serialhex/nano-highlight/blob/d3fdc6a29658503f8b19bff1a0809406859f7f06/nscd.nanorc
+# License: Unlicense
+
+syntax "nscd" "nscd.conf$"
+color cyan "(passwd|group|hosts)"
+color yellow "([0-9]|yes)"
+color green "#.*$"
+

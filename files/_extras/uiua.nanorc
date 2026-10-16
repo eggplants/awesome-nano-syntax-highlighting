@@ -1,0 +1,45 @@
+# Source: https://github.com/cqn-brwpna9/uiua-nano-config/blob/5b56703ce05a691592d055d13ac9fbea5b057df4/uiua.nanorc
+# License: NOASSERTION (no license found upstream)
+
+# Syntax highlighting for uiua
+
+syntax uiua "\.ua"
+comment "#"
+formatter uiua fmt
+tabgives "  "
+
+#numbers
+color orange "[0-9.η∞πτ]"
+
+#nilads
+color brightred "(&args|&asr|&b|&clip|&sc|&ts|arch|dllext|exeext|now|numprocs|os|osfamily|pathsep|tag|timezone|⚂)[₁₂₃₄₅₆₇₈₉⌟⌞]*"
+
+#monads
+color brightgreen "(&ap|&camcap|&cd|&cl|&ep|&epf|&exit|&fc|&fde|&fe|&fif|&fld|&fmd|&fo|&frab|&fras|&ftr|&ims|&invk|&memfree|&p|&pf|&raw|&runc|&runi|&runs|&s|&sl|&tcpa|&tcpaddr|&tcpc|&tcpl|&tcpsnb|&tlsc|&udpb|&udpr|&var|binary|csv|datetime|fft|graphemes|hsv|json|pretty|recv|repr|tryrecv|type|utf₈|voxels|wait|xlsx|¬|±|¯|⌵|√|ₑ|∿|⌊|⌈|⁅|⧻|△|⇡|⊢|⊣|⇌|♭|⍉|⍆|⍏|⍖|⊚|◴|⊛|⧆|⋕|⋕|⨪|¤|⋯|□)[₀₁₂₃₄₅₆₇₈₉⌟⌞]*"
+
+#dyads
+color brightblue "(&apngs|&ffi|&fwa|&gifs|&memcpy|&rb|&rs|&ru|&seek|&tcpsrt|&tcpswt|&udpsml|&w|apng|bytes|gen|get|gif|has|img|layout|map|regex|remove|send|=|≠|<|≤|>|≥|\+|-|×|÷|◿|ⁿ|↧|↥|∠|ℂ|≍|⊟|⊂|⊏|⊡|↯|↙|↘|↻|⤸|▽|⌕|⦷|∊|⨂|⊥|⍤)[₀₁₂₃₄₅₆₇₈₉⌟⌞]*"
+
+#monadic modifier
+color brightyellow "(&ast|&rl|comptime|dump|memo|pool|quote|spawn|˙|˜|⊙|⋅|⟜|⊸|⤙|⤚|◡|/|∧|\\|≡|⍚|⊞|⧅|⧈|⍥|⊕|⊜|◇|⌅|°|⌝|⍩|◠|⧋|⩜|∂|∫)[₀₁₂₃₄₅₆₇₈₉⌟⌞]*"
+
+#non mondaic modifier
+color purple "(path|recur|∩|⊃|⊓|⍜|⍢|⬚|⨬|⍣)[₁₂₃₄₅₆₇₈₉⌟⌞]*"
+
+#monadic macros
+color brightyellow "[a-z|A-Z]+!"
+
+#dyadic macros
+color purple "[a-z|A-Z]+‼"
+color purple "[a-z|A-Z]+!!"
+
+#triadic and above macros
+color cyan "[a-zA-Z]+‼{2,}!?"
+color cyan "[a-zA-Z]+‼!"
+color cyan "[a-zA-Z]+!{3,}"
+
+#strings
+color brightcyan "\$?"([^"]|\\")*""
+
+#comments
+color grey "#.*"

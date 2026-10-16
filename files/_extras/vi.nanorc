@@ -1,0 +1,14 @@
+# Source: https://github.com/galenguyer/nano-syntax-highlighting/blob/6f7cb16bf238fa5c55995377ec9d1d3fa9b9515f/vi.nanorc
+# License: GPL-3.0-or-later
+
+syntax "VI" "(^|/|\.)(ex|vim)rc$" "\.vim$"
+
+color brightblue "[A-Za-z_][A-Za-z0-9_]*[[:space:]]*[()]"
+color cyan  "\<([nvxsoilc]?(nore|un)?map|[nvlx]n|[ico]?no|[cilovx][um]|s?unm)\>"
+color cyan  "\<(snor|nun|nm|set|if|endif|let|unlet)\>"
+color red "[!&=]"
+color yellow ""(\\.|[^"])*"|'(\\.|[^'])*'"
+color brightblack  "(^|[[:space:]])\"[^"]*$"
+color brightwhite,yellow "\<(FIXME|TODO|XXX)\>"
+color ,green "[[:space:]]+$"
+color ,red "	+ +| +	+"

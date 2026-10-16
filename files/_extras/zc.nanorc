@@ -1,0 +1,42 @@
+# Source: https://github.com/Kapendev/zen-c-nanorc/blob/5d71030f601b771a7580c69ac833cae6b726f16d/zc.nanorc
+# License: Unlicense
+
+## Zen-C Programming Language
+
+syntax "Zen-C" "\.(zc)$"
+magic "^(Zen-C) (source|program)"
+comment "//"
+
+# --- Basic
+
+# Keywords
+color brightblue "\<(int|uint|i8|i16|i32|i64|i128|I8|I16|I32|I64|I128|u8|u16|u32|u64|u128|U8|U16|U32|U64|U128)\>"
+color brightblue "\<(isize|usize|byte|f32|f64|F32|F64|bool|char|string|u0|U0|void)\>"
+color brightblue "\<(var|const|struct|enum|union|alias|fn)\>"
+color brightblue "\<(if|else|match|ref|break|for|while|do)\>"
+color brightblue "\<(goto|continue|return|defer|def|let|var)\>"
+color brightblue "\<(guard|unless|impl|trait|print|println|eprint|eprintln|use|comptime|embed|as|import|define|asm|volatile|NULL)\>"
+color brightblue "#[a-zA-Z0-9]+"
+# Escape Sequences
+color brightblue "\\(\#|(0-+))?('|\"|\?|\\|0|a|b|f|n|r|t|v|x|u|U)"
+# Booleans
+color cyan "\<(true|false)\>"
+# Numbers
+color cyan "\<[0-9]+\.[0-9]+(f|F)*\>" "\<[0-9]+(L|u|U|Lu|LU|uL|UL)*\>" "\<0[0-7]*\>" "\<0x[0-9a-fA-F][0-9a-fA-F]*\>"
+# Strings
+color cyan ""(\\.|[^"])*"" "`(\\.|[^"])*`"
+# Characters
+color cyan "'([^'\]|(\\["'abfnrtv\\]))'"
+# Comments
+color green "//.*"
+color green start="/\*" end="\*/"
+color green start="/\+" end="\+/"
+# Trailing Whitespace
+color ,green "[[:space:]]+$"
+
+# --- Extra
+
+# Operators
+# color brightblue "[.:;,+*|=!\%]" "<" ">" "/" "-" "&" "~" "\?" ".." "..<" "..=" "=>" "|>" "??=" "?." "??" "?" "->"
+# Parenthetical Stuff
+# color brightblue "[(){}]" "\[" "\]"

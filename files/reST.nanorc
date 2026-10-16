@@ -1,0 +1,30 @@
+# Source: https://github.com/galenguyer/nano-syntax-highlighting/blob/6f7cb16bf238fa5c55995377ec9d1d3fa9b9515f/reST.nanorc
+# License: GPL-3.0-or-later
+
+## For reST
+syntax "RST" "\.rest$" "\.rst$"
+# italics
+#color magenta "\*[^*]\*"
+# bold
+color red "\*\*[^*]+\*\*"
+# code block
+color brightred "::"
+# link reference
+color blue "`[^`]+`_{1,2}"
+# code
+color yellow "``[^`]+``"
+# directives or comments
+color cyan "^\.\. .*$"
+# anon link targets
+color cyan "^__ .*$"
+# h1
+color yellow "^###+$"
+color yellow "^\*\*\*+$"
+# h2
+color magenta "^===+$"
+# h3
+color red "^---+$"
+# h4
+color green "^\^\^\^+$"
+# h5
+color blue "^"""+$"

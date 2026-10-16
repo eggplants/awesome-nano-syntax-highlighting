@@ -1,0 +1,67 @@
+# Source: https://github.com/jxpx666/blackbox-syntax-highlight/blob/8b4eef798defdd97537613ec472ee91cae5ba17d/nano-syntax-highlight/syntaxes/blackboxrcfile.nanorc
+# License: MIT
+
+## Experimental GNUnano syntax highlighting dotfile
+## Blackbox 0.77 @ [-rcfile], usually ~/.blackboxrc
+## jxpx666 @ 2023
+
+syntax "Blackboxrc" ".blackboxrc"
+
+##PlacementDirection
+color brightmagenta "\<(LeftToRight|TopToBottom|RightToLeft|BottomToTop)\>"
+
+#placement
+color brightmagenta "\<(TopLeft|TopCenter|TopRight|CenterLeft|CenterRight|BottomLeft|BottomCenter|BottomRight)\>"
+
+#direction
+color brightmagenta "\<(Horizontal|Vertical)\>"
+
+color brightmagenta "\<(True|False)\>"
+
+#fmt
+color brightmagenta "\<(American|European)\>"
+
+#dither
+color brightmagenta "\<(OrderedDither)\>"
+
+#focusModel
+color brightmagenta "\<(AutoRaise|SloppyFocus|ClickToFocus)\>"
+
+#windowPlacement
+color brightmagenta "\<(RowSmartPlacement|ColSmartPlacement|CascadePlacement)\>"
+
+#integer
+color pink "\<[0-9]+\>"
+
+#screenN
+#color gray "\+<[0-9]\>"
+
+#KEYWORD
+color brightmagenta "Workspace"
+
+#urls/paths
+color brightblue "~[^ )>]+"
+color brightblue "/[^ )>]+"
+color brightblue "$HOME[^ )>]+"
+
+color brightblack "(^|[[:space:]])#([^{].*)?$"
+color ,green "[[:space:]]+$"
+color ,red "	, ,| ,	,"
+
+# value
+color brightgreen "^[[:alnum:]]+\."
+color pink "\.[[:alnum:]]+[0-9]\."
+
+color brightyellow "\.[[:alnum:]]+\:"
+
+# widgets
+color brightcyan "\<(slit)\>"
+color brightcyan "\<(toolbar)\>"
+color brightcyan "\+[workspaces]\>"
+#color brightblue "screen[[:alnum:]]"
+color brightblue "screen"
+color brightcyan "\<(workspace)\+>"
+
+#menu
+# syntax markup
+color brightred "[.:]"

@@ -1,0 +1,25 @@
+# Source: https://github.com/gerph/nano-colour/blob/87f06fba4a1f713b534524fec231b74850cb4a57/examples/codeowners.nanorc
+# License: MIT
+
+syntax "codeowners" "CODEOWNERS$"
+comment "#"
+
+# Comments.
+color green "^#.*| #.*"
+
+# Spaces in front of tabs.
+color ,red " +	+"
+
+# Paths at the front
+color brightblue "^([^# /]*/)*[^#/ ]+"
+color blue "^([^# /]*/)*"
+
+# Invalid lines
+color red "^[^# ]+ +[^#@]*$"
+color red "^[^# ]+$"
+
+# Email addresses.
+color magenta " [[:alnum:].%_+-]+@[[:alnum:].-]+\.[[:alpha:]]{2,}\b"
+
+# Groups
+color cyan " @[[:alnum:]/.:-]+\b"

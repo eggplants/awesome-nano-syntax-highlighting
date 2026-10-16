@@ -1,0 +1,19 @@
+# Source: https://github.com/serialhex/nano-highlight/blob/d3fdc6a29658503f8b19bff1a0809406859f7f06/xorg.nanorc
+# License: Unlicense
+
+syntax "xorg" "xorg\.conf$"
+color brightwhite "[^A-Za-z0-9](End)?Sub[sS]ection([^A-Za-z0-9]|[[:space:]]*)"
+color brightwhite "^[[:space:]]*(End)?Section([^A-Za-z0-9]|[[:space:]]*)"
+color yellow "[^A-Za-z0-9](Monitor|View[pP]ort|Virtual)[^A-Za-z0-9]"
+color yellow "[^A-Za-z0-9]Mod(e|es|eline|ulePath|elName)[^A-Za-z0-9]"
+color yellow "[^A-Za-z0-9](\+vsync|\+hsync|HorizSync|VertRefresh)[^A-Za-z0-9]"
+color yellow "[^A-Za-z0-9](Rgb|Font)Path[^A-Za-z0-9]"
+color yellow "[^A-Za-z0-9](Default(Color)?)?Depth[^A-Za-z0-9]"
+color yellow "[^A-Za-z0-9](Input)?Device[^A-Za-z0-9]"
+color yellow "[^A-Za-z0-9](Identifier|Screen|Option)[^A-Za-z0-9]"
+color yellow "[^A-Za-z0-9]((Left|Right)Of|Driver|Load)[^A-Za-z0-9]"
+color yellow "[^A-Za-z0-9](VendorName|BoardName|BusID)[^A-Za-z0-9]"
+color magenta "[0-9]"
+color white ""(\\.|[^\"])*""
+color green "#.*"
+

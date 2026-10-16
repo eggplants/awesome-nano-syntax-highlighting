@@ -1,0 +1,12 @@
+# Source: https://github.com/galenguyer/nano-syntax-highlighting/blob/6f7cb16bf238fa5c55995377ec9d1d3fa9b9515f/sed.nanorc
+# License: GPL-3.0-or-later
+
+syntax "SED" "\.sed$"
+header "^#!.*bin/(env +)?sed( |$)"
+
+color red "[|^$.*+]"
+color brightyellow "\{[0-9]+,?[0-9]*\}"
+color magenta   "\\."
+color brightblack "(^|[[:space:]])#([^{].*)?$"
+color ,green "[[:space:]]+$"
+color ,red "	+ +| +	+"

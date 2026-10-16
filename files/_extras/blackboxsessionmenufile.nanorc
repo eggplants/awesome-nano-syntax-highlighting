@@ -1,0 +1,63 @@
+# Source: https://github.com/jxpx666/blackbox-syntax-highlight/blob/8b4eef798defdd97537613ec472ee91cae5ba17d/nano-syntax-highlight/syntaxes/blackboxsessionmenufile.nanorc
+# License: MIT
+
+## Experimental GNUnano syntax highlighting dotfile
+## Blackbox 0.77 [session.MenuFile], usually ~/.blackbox/menu
+## jxpx666 @ 2023
+
+syntax blackbox "menu"
+magic "Blackbox Menu"
+comment "#"
+
+formatter tidy -m -q
+
+
+# Begin:
+color cyan,black start="\[begin]" end=")"
+
+
+
+# Submenu + Subtitle:
+color white start="\[submenu]" end=")"
+
+
+# Special:
+
+
+# Include:
+color lightmagenta start="\[include]" end=")"
+# Stylesdir:
+color lightmagenta start="\[stylesdir]" end=")"
+# Restart:
+color lightmagenta start="\[restart]" end="}"
+# Config:
+color lightmagenta start="\[config]" end=")"
+# Reconfig:
+color lightmagenta start="\[reconfig]" end=")"
+# Nop:
+color lightmagenta start="\[nop]" end=")"
+# Workspaces:
+color lightmagenta start="\[workspaces]" end=")"
+# Exit:
+color lightmagenta start="\[exit]" end=")"
+
+
+
+# Keywords:
+
+# End:
+color yellow,red "\[end]"
+color yellow,red  "\[submenu]"
+
+# Sep
+color red,white "\[sep]"
+# Nop
+color red,white "\[nop]"
+
+
+# Exec - Subtitle:
+color magenta start="\[exec]" end="}"
+
+# Exec:
+color red,yellow start="\[exec" end="]"
+color brightwhite start="\{" end="}"

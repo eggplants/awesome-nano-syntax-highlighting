@@ -1,0 +1,17 @@
+# Source: https://github.com/galenguyer/nano-syntax-highlighting/blob/6f7cb16bf238fa5c55995377ec9d1d3fa9b9515f/brainfuck.nanorc
+# License: GPL-3.0-or-later
+
+syntax "brainfuck" "\.(bf|b)$"
+magic "brainfuck"
+comment ""
+
+# control flow
+color orange "\["
+color orange "]"
+color red "<"
+color red ">"
+# data manipulation
+color cyan "\+"
+color cyan "-"
+color brightgreen ","
+color brightgreen "\."

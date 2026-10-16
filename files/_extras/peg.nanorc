@@ -1,0 +1,15 @@
+# Source: https://github.com/galenguyer/nano-syntax-highlighting/blob/6f7cb16bf238fa5c55995377ec9d1d3fa9b9515f/peg.nanorc
+# License: GPL-3.0-or-later
+
+syntax "PEG" "\.l?peg$"
+
+color cyan  "^[[:space:]]*[A-Za-z][A-Za-z0-9_]*[[:space:]]*<-"
+color blue   "\^[+-]?[0-9]+"
+color red "[-+*?^/!&]|->|<-|=>"
+color brightyellow    "%[A-Za-z][A-Za-z0-9_]*"
+color magenta   "\[[^]]*\]"
+color yellow ""(\\.|[^"])*"|'(\\.|[^'])*'"
+color brightblack  "(^|[[:space:]])\-\-.*$"
+color brightwhite,cyan "TODO:?"
+color ,green "[[:space:]]+$"
+color ,red "	+ +| +	+"

@@ -1,0 +1,10 @@
+# Source: https://github.com/serialhex/nano-highlight/blob/d3fdc6a29658503f8b19bff1a0809406859f7f06/rsync.nanorc
+# License: Unlicense
+
+syntax "rsync" "rsyncd.conf$"
+color cyan "(hosts|(u|g)id|pid\ file|use\ chroot|read\ only|address|max\ connections|motd\ file)"
+color cyan "(log\ format|syslog\ facility|timeout)"
+color yellow "(path|comment|exclude)"
+color brightyellow  start="\[" end="\]"
+color green "#.*$"
+

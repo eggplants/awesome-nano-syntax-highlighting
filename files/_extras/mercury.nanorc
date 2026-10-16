@@ -1,0 +1,42 @@
+# Source: https://github.com/emacstheviking/mercury-nano-mode/blob/591c880ce4b6dea661aa3f6d07c780b99778b717/mercury.nanorc
+# License: MIT
+
+## Mercury, ported and adjusted from Prolog mode.
+
+syntax "mercury" "\.m$"
+comment "%"
+
+## Written in Mercury for Nano+Mercury, this will interleave
+## a FOO.err file when called from FOO.m via Meta-F (formatter)
+formatter pberr nanoformatter
+
+# Integers and floats
+color yellow "(^| |=)[0-9]+\.?[0-9]*"
+
+# Variables
+color magenta "(^|[[:blank:]]|\(|,)[A-Z_!][a-zA-Z0-9_\.\:]*($|[[:blank:]]|,|\))"
+
+# Anonymous variable '_'
+color yellow "(^|[[:blank:]]|\(|,)_($|[[:blank:]]|,|\))"
+
+# Functions
+color cyan "(^|[[:blank:]])\w+\("
+color cyan "\(|\)|\[|\]|,|=|\\="
+
+# Comments
+color green "(^|[[:blank:]])%.*$"
+
+# Strings
+color yellow "\".*\""
+
+# compiler :-
+color cyan "^:- .*$"
+
+# custom errors for pberr
+color red "^%E.*$"
+
+# Reminders
+color yellow "(BUG|DEBUG|FIXME|IDEA|NOTE|REVIEW|TEMP|TODO|WARNING|XXX|TOFU)"
+
+# Spaces in front of tabs
+color ,red " +	+"

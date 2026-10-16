@@ -1,0 +1,40 @@
+# Source: https://github.com/0hip/nanorc-for-FANUC/blob/1726ab2f90e3641c4e17161a872492097f7e792c/fanuc.nanorc
+# License: NOASSERTION (no license found upstream)
+
+## Syntax highlighting for FANUC G-code.
+#
+## Author:  Otto H.
+#
+## Language reference: B-63527EN/01 "OPERATION AND MAINTENANCE HANDBOOK"
+
+syntax "Gcode" "\.(mpf|CNC|cnc|tap|NC|nc)$"
+
+#Tool [T D H]
+color brightmagenta "(ROUND|SQRT|AND|BCD|^[[:blank:]]*END[123]|GT|LT|[DHT][-]?[[:digit:]]*\.?[[:digit:]]*)"
+
+#Speed Feedrate [S F P A]
+color brightgreen "(ACOS|COS|ABS|FUP|EXP|IF|[SPFA][-]?[[:digit:]]*\.?[[:digit:]]*)"
+
+#Line numbers
+color brightblack "^[[:blank:]]*N[[:digit:]]+"
+
+#G-codes
+color cyan "G[[:digit:]]*"
+
+#M-codes
+color yellow "M[[:digit:]]+"
+
+#Z-axis
+color brightblue "Z[-]?[[:digit:]]*\.?[[:digit:]]*"
+
+#Macros
+color brightblue "(ROUND|^[[:blank:]]*WHILE|GOTO([[:digit:]]+|)|THEN|ASIN|ACOS|ATAN|SQRT|XOR|AND|SIN|COS|TAN|ABS|BIN|BCD|FIX|FUP|EXP|^[[:blank:]]*END[123]|DO[123]|OR|LN|IF|EQ|NE|GT|LT|GE|LE)"
+color green "#[[:digit:]]*"
+color brightred "(\[|\]|\*|\/|\=)"
+
+#Block-Skip
+color brightblack "^/.*"
+
+#Comments
+color red "\(.*\)"
+color brightblack "'.*"

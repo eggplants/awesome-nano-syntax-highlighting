@@ -1,0 +1,79 @@
+# Source: https://github.com/Oples/nanorc-nim/blob/8263f70756e8f18b2b00bf2465dfa29ed1f8559b/nim.nanorc
+# License: GPL-3.0
+
+## Nim syntax highlight rules for Nano editor
+# Author: Oples
+# License: GPL-3.0
+
+syntax "nim" "\.nim((s|$)|(ble|$))"
+header "^#!.*nim"
+magic "Nim script"
+
+
+# Keywords.
+color brightcyan "\<(and|as|assert|async|asyncCheck|await|break|continue|inc|dec)\>"
+color brightcyan "\<(discard|if|elif|else|case|of|except|finally|from)\>"
+color brightcyan "\<(global|if|import|is|isnot|lambda|nonlocal|not|or|xor)\>"
+color brightcyan "\<(pass|raise|return|try|with|yield|await|discard)\>"
+
+# Functions, Procedures, Templates, Macros and Methods
+color brightcyan "\<((func|proc|template|macro|method|iterator) [a-zA-Z_0-9]?+)\>"
+color brightblue "\<(func|proc|template|macro|method|iterator)\>"
+
+# When statement
+color brightblue "\<(when)"
+
+# type
+color brightcyan "(^[ ]*type [a-zA-Z_0-9]+)"
+color brightblue "(^[ ]*type([ ]+|$))"
+
+# proc firm
+color brightyellow "(\{\.[a-zA-Z_0-9]+\.\})"
+
+# Nim repeat
+color brightcyan "\<(while|for|in|notin)\>"
+
+# Channels I/O
+color brightmagenta "\<(stdin|stdout|stderr)\>"
+
+# color printing (stdout) functions
+color brightcyan "\<(echo)([[:space:]]| |$)"
+
+# Special values.
+color brightmagenta "\<(self|none|true|false)\>"
+
+## Nim built-in values
+# numbers
+color brightmagenta "\<(byte|int|int8|int16|int32|int64|uint|uint8|uint16|uint32|uint64|float|float32|float64)\>"
+# object
+color brightmagenta "\<(ref|ptr|distinct|object|enum|RootObj)\>"
+# misc.
+color brightmagenta "\<(string|cstring|char|bool|tuple|seq|openArray)\>"
+
+# numbers
+icolor brightyellow "\b(([1-9][0-9]+)|0+)\.[0-9]+j?\b" "\b([1-9][0-9]*[Lj]?)\b" "\b0o?[0-7]*L?\b" "\b0x[1-9a-f][0-9a-f]*L?\b" "\b0b[01]+\b"
+
+# Var types
+color brightblue "\<(const|var|let)\>"
+
+# Single-quoted strings.
+color brightgreen "'([^'\]|\\.)*'|"([^"\]|\\.)*"|'''|""""
+color normal "'''|\"\"\""
+
+# Triple-quoted strings.
+color brightgreen "\"\"\"\"\"\""
+color brightgreen start=""""([^"),]|$)" end="(^|[^(\])""""
+
+# Comments.
+color brightred "(^|[[:blank:]])#.*"
+
+# multiline-comment.
+color brightred   start="#\[([^#),]|$)" end="(^|[^(\])\]#"
+color brightred   start="##[([^"),]|$)" end="(^|[^(\])\]##"
+
+# Reminders.
+color brightwhite,red "(FIXME|ERROR)"
+color brightred,yellow  "(TODO|XXX)"
+
+# Trailing whitespace.
+color ,green "[[:space:]]+$"

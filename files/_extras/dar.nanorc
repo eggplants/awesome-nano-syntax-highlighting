@@ -1,0 +1,14 @@
+# Source: https://github.com/sebastianwagner/dar.nanorc/blob/0294ccf6c03d34bf6b5a63f23995c2f4f5ae24e1/dar.nanorc
+# License: NOASSERTION (no license found upstream)
+
+syntax "dar" "\.darrc$"
+
+# commands 
+color brightred "(\<(create|extract|list|test|diff|isolate|merge)\>):"
+color green "-(,|D|M|-nodump)"
+
+# comments
+color brightblue "(^|[[:space:]])#.*$"
+
+# Trailing whitespace
+color ,green "[[:space:]]+$"

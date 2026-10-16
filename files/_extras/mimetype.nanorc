@@ -1,0 +1,10 @@
+# Source: https://github.com/serialhex/nano-highlight/blob/d3fdc6a29658503f8b19bff1a0809406859f7f06/mimetype.nanorc
+# License: Unlicense
+
+syntax "mimetype" "mime.types"
+icolor cyan "[.A-Z_]*/"
+color brightwhite "/"
+color green "[[:space:]].*$"
+
+## Comments
+color green "#.*$"

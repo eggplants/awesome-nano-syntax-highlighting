@@ -1,0 +1,13 @@
+# Source: https://github.com/galenguyer/nano-syntax-highlighting/blob/6f7cb16bf238fa5c55995377ec9d1d3fa9b9515f/keymap.nanorc
+# License: GPL-3.0-or-later
+
+syntax "Keymap" "\.(k|key)?map$|Xmodmap$"
+
+color cyan  "\<(add|clear|compose|keycode|keymaps|keysym|remove|string)\>"
+color cyan  "\<(control|alt|shift)\>"
+color blue   "\<[0-9]+\>"
+color red "="
+color yellow ""(\\.|[^"])*"|'(\\.|[^'])*'"
+color brightblack  "^!.*$"
+color ,green "[[:space:]]+$"
+color ,red "	+ +| +	+"

@@ -1,0 +1,14 @@
+# Source: https://github.com/serialhex/nano-highlight/blob/d3fdc6a29658503f8b19bff1a0809406859f7f06/tab.nanorc
+# License: Unlicense
+
+syntax "fstab" "(\.|/)tab$"
+color magenta "\<(none)\>.*$" "\<(wait)\>" "\<(respawn)\>"
+color red "/dev/hd.*$" "\<(ctrlaltdel)\>" "\<(initdefault)\>"
+color blue "/dev/sr.*$" "/dev/cd.*$" "\/sbin.*$"
+color cyan "/dev/sd.*$"
+color brightcyan "^.*(nfs|smbfs).*$"
+color yellow "/dev/fd.*$"
+color red "root"
+color brightwhite "[0-9]"
+color green "#.*$"
+

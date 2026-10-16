@@ -1,0 +1,20 @@
+# Source: https://git.savannah.gnu.org/cgit/nano.git/tree/syntax/email.nanorc?id=9a716c9993e6e83d46c5640974fc832f68705a6c
+# License: GPL-3.0-or-later
+
+## Syntax highlighting for emails.
+
+syntax email "\.eml$"
+
+# Quoted lines.
+color green "^>.*"
+color cyan "^> ?>.*"
+color yellow "^> ?> ?>.*"
+
+# Email addresses.
+color brightmagenta "<[^@]+@[^@]+>"
+
+# URLs.
+color brightblue "(https?|ftp)://\S+\.\S+[^[:space:].)]"
+
+# Signatures, even quoted ones.
+color yellow start="^>* ?-- $" end="^>* ?$"

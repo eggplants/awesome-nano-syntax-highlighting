@@ -1,0 +1,153 @@
+# Source: https://github.com/markusmueller73/purebasic.nanorc/blob/255c629443ea48d17573f1af0fb3977dd71ed975/purebasic.nanorc
+# License: GPL-2.0-or-later
+
+###############################################################################
+#
+# Purebasic syntax highlighting for Nano.
+#
+# Author:  Markus Mueller <markus (dot) mueller (dot) 73 (at) hotmail (dot) de>
+# License: GPL 2  or later
+#
+# Version: 2023-02-04
+#
+# Notes: Originally based on Ruby syntax rc by Josef 'Jupp' Schugt and
+#        Lua syntax by Matthew Wild
+###############################################################################
+
+
+# Automatically use for '.pb' and '.pbi' files
+syntax "Purebasic" "\.pb$" "\.pbi$"
+magic "Purebasic source code"
+comment ";"
+
+# General
+color brightwhite ".+"
+
+# Operators
+color brightmagenta "=|\+|-|\*|/|&|||!|~|<|>|<=|=<|>=|=>|<>|<<|>>|%|\<(And|Or|XOr|Not)\>"
+
+# false, nil, true
+color brightcyan "\<(\#False|\#Nil|\#True)\>"
+
+# Constants
+color cyan "\#([A-Za-z0-9_-]+)"
+
+# Numbers
+color brightred "\<([0-9]+)\>"
+color brightred "\%([0-1]+)"
+color brightred "\$([A-Fa-f0-9]+)"
+
+# Symbols
+color brightmagenta "(\(|\)|\[|\]|\{|\})"
+
+# Strings
+color red "\"(\\.|[^\\\"])*\"|'(\\.|[^\\'])*'"
+
+# Simple comments
+color brightblack "\;.*"
+color brightblack "\;-.*"
+
+# Statements
+color brightblue "\<(For|Next|ForEach|Gosub|Break|Continue|If|Else|ElseIf|EndIf|Repeat|Until|Select|EndSelect|While|Wend|Goto|End|Swap)\>"
+
+# Keywords
+color brightgreen "\<(Define|Dim|ReDim|Enumeration|EndEnumeration|Interface|EndInterface|Module|EndModule|NewList|NewMap|Structure|EndStructure|With|EndWith|Import|EndImport|Macro|EndMacro|Runtime|Threaded|DataSection|EndDataSection|IncludeFile|XIncludeFile|IncludePath|IncludeBinary)\>"
+color brightgreen "\<(Global|Procedure|EndProcedure|Protected|Shared|Static|Prototype|Pseudotype|Data|Read)\>"
+color brightgreen "\<(Global|Procedure|EndProcedure|Protected|Shared|Static|Prototype|Pseudotype|Data|Read)\>\."
+
+# Debugger
+color red "\<(Debug|DebugLevel|EnableDebugger|DisableDebugger)\>"
+
+# Standard library
+color brightyellow "\<(ACos|ACosH|AESDecoder|AESEncoder|ASin|ASinH|ATan|ATan2|ATanH|AbortFTPFile|AbortHTTP|Abs|Add3DArchive|AddBillboard|AddCipherBuffer|AddDate|AddElement|AddEntityAnimationTime|AddFingerprintBuffer|AddGadgetColumn)\>"
+color brightyellow "\<(AddGadgetItem|AddGadgetItem3D|AddImageFrame|AddJSONElement|AddJSONMember|AddKeyboardShortcut|AddMailAttachment|AddMailAttachmentData|AddMailRecipient|AddMapElement|AddMaterialLayer|AddMeshManualLOD|AddNodeAnimationTime|AddPackFile|AddPackMemory|AddPathArc|AddPathBox|AddPathCircle|AddPathCurve|AddPathEllipse)\>"
+color brightyellow "\<(AddPathLine|AddPathSegments|AddPathText|AddSplinePoint|AddStaticGeometryEntity|AddStatusBarField|AddSubEntity|AddSubMesh|AddSysTrayIcon|AddTerrainTexture|AddVehicleWheel|AddVertexPoseReference|AddWindowTimer|AffectedDatabaseRows|AllocateMemory|AllocateStructure|Alpha|AlphaBlend|AmbientColor|AntialiasingMode)\>"
+color brightyellow "\<(ApplyEntityForce|ApplyEntityImpulse|ApplyEntityTorque|ApplyEntityTorqueImpulse|ApplyVehicleBrake|ApplyVehicleForce|ApplyVehicleSteering|ArraySize|Asc|Ascii|AttachEntityObject|AttachNodeObject|AttachRibbonEffect|AudioCDLength|AudioCDName|AudioCDStatus|AudioCDTrackLength|AudioCDTrackSeconds|AudioCDTracks|AvailableProgramOutput)\>"
+color brightyellow "\<(AvailableSerialPortInput|AvailableSerialPortOutput|BackColor|Base64Decoder|Base64DecoderBuffer|Base64Encoder|Base64EncoderBuffer|BeginVectorLayer|BillboardGroupCommonDirection|BillboardGroupCommonUpVector|BillboardGroupID|BillboardGroupMaterial|BillboardGroupX|BillboardGroupY|BillboardGroupZ|BillboardHeight|BillboardLocate|BillboardWidth|BillboardX|BillboardY)\>"
+color brightyellow "\<(BillboardZ|Bin|BindEvent|BindGadgetEvent|BindMenuEvent|Blue|BodyPick|Box|BoxedGradient|BuildMeshLOD|BuildMeshShadowVolume|BuildMeshTangents|BuildStaticGeometry|BuildTerrain|ButtonGadget|ButtonGadget3D|ButtonImageGadget|CGIBuffer|CGICookieName|CGICookieValue)\>"
+color brightyellow "\<(CGIParameterData|CGIParameterDataSize|CGIParameterName|CGIParameterType|CGIParameterValue|CGIVariable|CPUName|CalendarGadget|CallCFunction|CallCFunctionFast|CallFunction|CallFunctionFast|CameraBackColor|CameraCustomParameter|CameraDirection|CameraDirectionX|CameraDirectionY|CameraDirectionZ|CameraFOV|CameraFixedYawAxis)\>"
+color brightyellow "\<(CameraFollow|CameraID|CameraLookAt|CameraPitch|CameraProjectionMode|CameraProjectionX|CameraProjectionY|CameraRange|CameraReflection|CameraRenderMode|CameraRoll|CameraViewHeight|CameraViewWidth|CameraViewX|CameraViewY|CameraX|CameraY|CameraYaw|CameraZ|CanvasGadget)\>"
+color brightyellow "\<(CanvasOutput|CanvasVectorOutput|CatchImage|CatchJSON|CatchMusic|CatchSound|CatchSprite|CatchXML|ChangeCurrentElement|ChangeGamma|ChangeListIconGadgetDisplay|ChangeSysTrayIcon|CheckBoxGadget|CheckBoxGadget3D|CheckDatabaseNull|CheckFTPConnection|CheckFilename|CheckObjectVisibility|CheckObjectVisibility|ChildXMLNode)\>"
+color brightyellow "\<(Chr|Circle|CircularGradient|ClearBillboards|ClearClipboard|ClearConsole|ClearDebugOutput|ClearGadgetItemList|ClearGadgetItems|ClearGadgetItems3D|ClearJSONElements|ClearJSONMembers|ClearList|ClearMap|ClearScreen|ClearSpline|ClipOutput|ClipPath|ClipSprite|CloseConsole)\>"
+color brightyellow "\<(CloseCryptRandom|CloseDatabase|CloseDebugOutput|CloseFTP|CloseFile|CloseGadgetList|CloseGadgetList3D|CloseHelp|CloseLibrary|CloseNetworkConnection|CloseNetworkServer|ClosePack|ClosePath|ClosePreferences|CloseProgram|CloseScreen|CloseSerialPort|CloseSubMenu|CloseWindow|CloseWindow3D)\>"
+color brightyellow "\<(CocoaMessage|ColorRequester|ComboBoxGadget|ComboBoxGadget3D|CompareMemory|CompareMemoryString|ComposeJSON|ComposeXML|CompositorEffectParameter|CompressMemory|ComputeSpline|ComputerName|ConeTwistJoint|ConicalGradient|ConnectionID|ConsoleColor|ConsoleCursor|ConsoleError|ConsoleLocate|ConsoleTitle)\>"
+color brightyellow "\<(ContainerGadget|ContainerGadget3D|ConvertCoordinateX|ConvertCoordinateY|ConvertLocalToWorldPosition|ConvertWorldToLocalPosition|CopyArray|CopyDebugOutput|CopyDirectory|CopyEntity|CopyFile|CopyImage|CopyLight|CopyList|CopyMap|CopyMaterial|CopyMemory|CopyMemoryString|CopyMesh|CopySprite)\>"
+color brightyellow "\<(CopyTexture|CopyXMLNode|Cos|CosH|CountBillboards|CountCGICookies|CountCGIParameters|CountCPUs|CountGadgetItems|CountGadgetItems3D|CountLibraryFunctions|CountList|CountMaterialLayers|CountProgramParameters|CountRegularExpressionGroups|CountSplinePoints|CountString|CreateAnimatedMaterial|CreateBillboardGroup|CreateCamera)\>"
+color brightyellow "\<(CreateCapsule|CreateCompositorEffect|CreateCone|CreateCube|CreateCubeMapTexture|CreateCubicTexture|CreateCylinder|CreateDataMesh|CreateDialog|CreateDirectory|CreateEntity|CreateEntityBody|CreateFTPDirectory|CreateFile|CreateGadgetList|CreateIcoSphere|CreateImage|CreateImageMenu|CreateJSON|CreateLensFlareEffect)\>"
+color brightyellow "\<(CreateLight|CreateLine3D|CreateMail|CreateMaterial|CreateMenu|CreateMesh|CreateMutex|CreateNetworkServer|CreateNode|CreateNodeAnimation|CreateNodeAnimationKeyFrame|CreatePack|CreateParticleEmitter|CreatePlane|CreatePopupImageMenu|CreatePopupMenu|CreatePreferences|CreateRegularExpression|CreateRenderTexture|CreateRibbonEffect)\>"
+color brightyellow "\<(CreateSemaphore|CreateShader|CreateShaderMaterial|CreateSphere|CreateSpline|CreateSprite|CreateStaticGeometry|CreateStatusBar|CreateTerrain|CreateTerrainBody|CreateText3D|CreateTexture|CreateThread|CreateToolBar|CreateTorus|CreateTube|CreateVehicle|CreateVehicleBody|CreateVertexAnimation|CreateVertexPoseKeyFrame)\>"
+color brightyellow "\<(CreateVertexTrack|CreateWater|CreateXML|CreateXMLNode|CryptRandom|CryptRandomData|CustomDashPath|CustomFilterCallback|CustomGradient|DESFingerprint|DashPath|DatabaseColumnIndex|DatabaseColumnName|DatabaseColumnSize|DatabaseColumnType|DatabaseColumns|DatabaseDriverDescription|DatabaseDriverName|DatabaseError|DatabaseID)\>"
+color brightyellow "\<(DatabaseQuery|DatabaseUpdate|Date|DateGadget|Day|DayOfWeek|DayOfYear|DebuggerError|DebuggerWarning|DefaultPrinter|DefineTerrainTile|Degree|Delay|DeleteDirectory|DeleteElement|DeleteFTPDirectory|DeleteFTPFile|DeleteFile|DeleteMapElement|DeleteXMLNode)\>"
+color brightyellow "\<(DesktopDepth|DesktopFrequency|DesktopHeight|DesktopMouseX|DesktopMouseY|DesktopName|DesktopResolutionX|DesktopResolutionY|DesktopScaledX|DesktopScaledY|DesktopUnscaledX|DesktopUnscaledY|DesktopWidth|DesktopX|DesktopY|DetachEntityObject|DetachNodeObject|DetachRibbonEffect|DialogError|DialogGadget)\>"
+color brightyellow "\<(DialogID|DialogWindow|DirectoryEntryAttributes|DirectoryEntryDate|DirectoryEntryName|DirectoryEntrySize|DirectoryEntryType|DisableEntityBody|DisableGadget|DisableGadget3D|DisableLightShadows|DisableMaterialLighting|DisableMenuItem|DisableParticleEmitter|DisableToolBarButton|DisableWindow|DisableWindow3D|DisplayPopupMenu|DisplaySprite|DisplayTransparentSprite)\>"
+color brightyellow "\<(DotPath|DoubleClickTime|DragFiles|DragImage|DragOSFormats|DragPrivate|DragText|DrawAlphaImage|DrawImage|DrawRotatedText|DrawText|DrawVectorImage|DrawVectorParagraph|DrawVectorText|DrawingBuffer|DrawingBufferPitch|DrawingBufferPixelFormat|DrawingFont|DrawingMode|EditorGadget)\>"
+color brightyellow "\<(EditorGadget3D|EjectAudioCD|ElapsedMilliseconds|Ellipse|EllipticalGradient|EnableGadgetDrop|EnableGraphicalConsole|EnableHingeJointAngularMotor|EnableManualEntityBoneControl|EnableWindowDrop|EnableWorldCollisions|EnableWorldPhysics|EncodeImage|EndVectorLayer|Engine3DStatus|EntityAngularFactor|EntityAnimationBlendMode|EntityAnimationStatus|EntityBonePitch|EntityBoneRoll)\>"
+color brightyellow "\<(EntityBoneX|EntityBoneY|EntityBoneYaw|EntityBoneZ|EntityBoundingBox|EntityCollide|EntityCubeMapTexture|EntityCustomParameter|EntityDirection|EntityDirectionX|EntityDirectionY|EntityDirectionZ|EntityFixedYawAxis|EntityID|EntityLinearFactor|EntityLookAt|EntityParentNode|EntityPitch|EntityRenderMode|EntityRoll)\>"
+color brightyellow "\<(EntityVelocity|EntityX|EntityY|EntityYaw|EntityZ|EnvironmentVariableName|EnvironmentVariableValue|Eof|ErrorAddress|ErrorCode|ErrorFile|ErrorLine|ErrorMessage|ErrorRegister|ErrorTargetAddress|EscapeString|Event|EventClient|EventData|EventDropAction)\>"
+color brightyellow "\<(EventDropBuffer|EventDropFiles|EventDropImage|EventDropPrivate|EventDropSize|EventDropText|EventDropType|EventDropX|EventDropY|EventGadget|EventGadget3D|EventMenu|EventServer|EventTimer|EventType|EventType3D|EventWindow|EventWindow3D|EventlParam|EventwParam)\>"
+color brightyellow "\<(ExamineAssembly|ExamineDatabaseDrivers|ExamineDesktops|ExamineDirectory|ExamineEnvironmentVariables|ExamineFTPDirectory|ExamineIPAddresses|ExamineJSONMembers|ExamineJoystick|ExamineKeyboard|ExamineLibraryFunctions|ExamineMouse|ExaminePack|ExaminePreferenceGroups|ExaminePreferenceKeys|ExamineRegularExpression|ExamineScreenModes|ExamineWorldCollisions|ExamineXMLAttributes|Exp)\>"
+color brightyellow "\<(ExplorerComboGadget|ExplorerListGadget|ExplorerTreeGadget|ExportJSON|ExportJSONSize|ExportXML|ExportXMLSize|ExtractJSONArray|ExtractJSONList|ExtractJSONMap|ExtractJSONStructure|ExtractRegularExpression|ExtractXMLArray|ExtractXMLList|ExtractXMLMap|ExtractXMLStructure|FTPDirectoryEntryAttributes|FTPDirectoryEntryDate|FTPDirectoryEntryName|FTPDirectoryEntryRaw)\>"
+color brightyellow "\<(FTPDirectoryEntrySize|FTPDirectoryEntryType|FTPProgress|FetchEntityMaterial|FetchOrientation|FileBuffersSize|FileFingerprint|FileID|FileSeek|FileSize|FillArea|FillMemory|FillPath|FillVectorOutput|FindMapElement|FindString|Fingerprint|FinishCipher|FinishDatabaseQuery|FinishDirectory)\>"
+color brightyellow "\<(FinishFTPDirectory|FinishFastCGIRequest|FinishFingerprint|FinishHTTP|FinishMesh|FirstDatabaseRow|FirstElement|FirstWorldCollisionEntity|FlipBuffers|FlipCoordinatesX|FlipCoordinatesY|FlushFileBuffers|FlushPreferenceBuffers|Fog|FontID|FontRequester|FormatDate|FormatNumber|FormatXML|FrameGadget)\>"
+color brightyellow "\<(FrameGadget3D|FreeArray|FreeBillboardGroup|FreeCamera|FreeDialog|FreeEffect|FreeEntity|FreeEntityBody|FreeEntityJoints|FreeFont|FreeGadget|FreeGadget3D|FreeIP|FreeImage|FreeJSON|FreeJoint|FreeLight|FreeList|FreeMail|FreeMap)\>"
+color brightyellow "\<(FreeMaterial|FreeMemory|FreeMenu|FreeMesh|FreeMovie|FreeMusic|FreeMutex|FreeNode|FreeNodeAnimation|FreeParticleEmitter|FreeRegularExpression|FreeSemaphore|FreeSound|FreeSound3D|FreeSpline|FreeSprite|FreeStaticGeometry|FreeStatusBar|FreeStructure|FreeTerrain)\>"
+color brightyellow "\<(FreeTerrainBody|FreeText3D|FreeTexture|FreeToolBar|FreeWater|FreeXML|FrontColor|GadgetHeight|GadgetHeight3D|GadgetID|GadgetID3D|GadgetItemID|GadgetToolTip|GadgetToolTip3D|GadgetType|GadgetType3D|GadgetWidth|GadgetWidth3D|GadgetX|GadgetX3D)\>"
+color brightyellow "\<(GadgetY|GadgetY3D|GenericJoint|GetActiveGadget|GetActiveGadget3D|GetActiveWindow|GetActiveWindow3D|GetClientIP|GetClientPort|GetClipboardImage|GetClipboardText|GetCurrentDirectory|GetDatabaseBlob|GetDatabaseDouble|GetDatabaseFloat|GetDatabaseLong|GetDatabaseQuad|GetDatabaseString|GetEntityAnimationLength|GetEntityAnimationTime)\>"
+color brightyellow "\<(GetEntityAnimationWeight|GetEntityAttribute|GetEntityCollisionGroup|GetEntityCollisionMask|GetEntityMesh|GetEnvironmentVariable|GetExtensionPart|GetFTPDirectory|GetFileAttributes|GetFileDate|GetFilePart|GetFunction|GetFunctionEntry|GetGadgetAttribute|GetGadgetAttribute3D|GetGadgetColor|GetGadgetData|GetGadgetData3D|GetGadgetFont|GetGadgetItemAttribute)\>"
+color brightyellow "\<(GetGadgetItemColor|GetGadgetItemData|GetGadgetItemData3D|GetGadgetItemState|GetGadgetItemState3D|GetGadgetItemText|GetGadgetItemText3D|GetGadgetState|GetGadgetState3D|GetGadgetText|GetGadgetText3D|GetHTTPHeader|GetHomeDirectory|GetImageFrame|GetImageFrameDelay|GetJSONBoolean|GetJSONDouble|GetJSONElement|GetJSONFloat|GetJSONInteger)\>"
+color brightyellow "\<(GetJSONMember|GetJSONQuad|GetJSONString|GetJointAttribute|GetLightColor|GetMailAttribute|GetMailBody|GetMaterialAttribute|GetMaterialColor|GetMenuItemState|GetMenuItemText|GetMenuTitleText|GetMeshData|GetMusicPosition|GetMusicRow|GetNodeAnimationKeyFramePitch|GetNodeAnimationKeyFrameRoll|GetNodeAnimationKeyFrameTime|GetNodeAnimationKeyFrameX|GetNodeAnimationKeyFrameY)\>"
+color brightyellow "\<(GetNodeAnimationKeyFrameYaw|GetNodeAnimationKeyFrameZ|GetNodeAnimationLength|GetNodeAnimationTime|GetNodeAnimationWeight|GetOriginX|GetOriginY|GetPathPart|GetRuntimeDouble|GetRuntimeInteger|GetRuntimeString|GetScriptMaterial|GetScriptParticleEmitter|GetScriptTexture|GetSerialPortStatus|GetSoundFrequency|GetSoundPosition|GetTemporaryDirectory|GetTerrainTileHeightAtPoint|GetTerrainTileLayerBlend)\>"
+color brightyellow "\<(GetToolBarButtonState|GetURLPart|GetUserDirectory|GetVehicleAttribute|GetW|GetWindowColor|GetWindowData|GetWindowState|GetWindowTitle|GetWindowTitle3D|GetX|GetXMLAttribute|GetXMLEncoding|GetXMLNodeName|GetXMLNodeOffset|GetXMLNodeText|GetXMLStandalone|GetY|GetZ|GrabDrawingImage)\>"
+color brightyellow "\<(GrabImage|GrabSprite|GradientColor|Green|HTTPInfo|HTTPMemory|HTTPProgress|HTTPProxy|HTTPRequest|HTTPRequestMemory|Hex|HideBillboardGroup|HideEffect|HideEntity|HideGadget|HideGadget3D|HideLight|HideMenu|HideParticleEmitter|HideWindow)\>"
+color brightyellow "\<(HideWindow3D|HingeJoint|HingeJointMotorTarget|HostName|Hour|HyperLinkGadget|IPAddressField|IPAddressGadget|IPString|ImageDepth|ImageFormat|ImageFrameCount|ImageGadget|ImageGadget3D|ImageHeight|ImageID|ImageOutput|ImageVectorOutput|ImageWidth|Infinity)\>"
+color brightyellow "\<(InitAudioCD|InitCGI|InitEngine3D|InitFastCGI|InitJoystick|InitKeyboard|InitMouse|InitMovie|InitScintilla|InitSound|InitSprite|Inkey|Input|InputEvent3D|InputEvent3D|InputRequester|InsertElement|InsertJSONArray|InsertJSONList|InsertJSONMap)\>"
+color brightyellow "\<(InsertJSONStructure|InsertString|InsertXMLArray|InsertXMLList|InsertXMLMap|InsertXMLStructure|InstructionAddress|InstructionString|Int|IntQ|IsBillboardGroup|IsCamera|IsCipher|IsDatabase|IsDialog|IsDirectory|IsEffect|IsEntity|IsFile|IsFingerprint)\>"
+color brightyellow "\<(IsFont|IsFtp|IsGadget|IsGadget3D|IsImage|IsInfinity|IsInsidePath|IsInsideStroke|IsJSON|IsJoint|IsLibrary|IsLight|IsMail|IsMaterial|IsMenu|IsMesh|IsMovie|IsMusic|IsNaN|IsNode)\>"
+color brightyellow "\<(IsParticleEmitter|IsPathEmpty|IsProgram|IsRegularExpression|IsRuntime|IsScreenActive|IsSerialPort|IsSound|IsSound3D|IsSprite|IsStaticGeometry|IsStatusBar|IsSysTrayIcon|IsText3D|IsTexture|IsThread|IsToolBar|IsWindow|IsWindow3D|IsXML)\>"
+color brightyellow "\<(JSONArraySize|JSONErrorLine|JSONErrorMessage|JSONErrorPosition|JSONMemberKey|JSONMemberValue|JSONObjectSize|JSONType|JSONValue|JoystickAxisX|JoystickAxisY|JoystickAxisZ|JoystickButton|JoystickName|KeyboardInkey|KeyboardMode|KeyboardPushed|KeyboardReleased|KillProgram|KillThread)\>"
+color brightyellow "\<(LCase|LSet|LTrim|LastElement|Left|Len|LensFlareEffectColor|LibraryFunctionAddress|LibraryFunctionName|LibraryID|LightAttenuation|LightDirection|LightDirectionX|LightDirectionY|LightDirectionZ|LightID|LightLookAt|LightPitch|LightRoll|LightX)\>"
+color brightyellow "\<(LightY|LightYaw|LightZ|Line|LineXY|LinearGradient|ListIconGadget|ListIndex|ListSize|ListViewGadget|ListViewGadget3D|LoadFont|LoadImage|LoadJSON|LoadMesh|LoadMovie|LoadMusic|LoadSound|LoadSound3D|LoadSprite)\>"
+color brightyellow "\<(LoadTexture|LoadWorld|LoadXML|Loc|LockMutex|Lof|Log|Log10|MDIGadget|MailProgress|MainXMLNode|MakeIPAddress|MapKey|MapSize|MatchRegularExpression|MaterialAnimation|MaterialBlendingMode|MaterialCullingMode|MaterialFilteringMode|MaterialFog)\>"
+color brightyellow "\<(MaterialID|MaterialShaderAutoParameter|MaterialShaderParameter|MaterialShaderTexture|MaterialShadingMode|MaterialShininess|MaterialTextureAliases|MemorySize|MemoryStatus|MemoryStringLength|MenuBar|MenuHeight|MenuID|MenuItem|MenuTitle|MergeLists|MeshFace|MeshID|MeshIndex|MeshIndexCount)\>"
+color brightyellow "\<(MeshPoseCount|MeshPoseName|MeshRadius|MeshVertex|MeshVertexColor|MeshVertexCount|MeshVertexNormal|MeshVertexPosition|MeshVertexTangent|MeshVertexTextureCoordinate|MessageRequester|Mid|Minute|Mod|Month|MouseButton|MouseDeltaX|MouseDeltaY|MouseLocate|MousePick)\>"
+color brightyellow "\<(MouseRayCast|MouseWheel|MouseX|MouseY|MoveBillboard|MoveBillboardGroup|MoveCamera|MoveElement|MoveEntity|MoveEntityBone|MoveLight|MoveMemory|MoveNode|MoveParticleEmitter|MovePathCursor|MoveText3D|MoveXMLNode|MovieAudio|MovieHeight|MovieInfo)\>"
+color brightyellow "\<(MovieLength|MovieSeek|MovieStatus|MovieWidth|MusicVolume|NaN|NetworkClientEvent|NetworkServerEvent|NewPrinterPage|NewVectorPage|NextDatabaseDriver|NextDatabaseRow|NextDirectoryEntry|NextElement|NextEnvironmentVariable|NextFTPDirectoryEntry|NextIPAddress|NextInstruction|NextJSONMember|NextLibraryFunction)\>"
+color brightyellow "\<(NextMapElement|NextPackEntry|NextPreferenceGroup|NextPreferenceKey|NextRegularExpressionMatch|NextScreenMode|NextSelectedFileName|NextWorldCollision|NextXMLAttribute|NextXMLNode|NodeAnimationStatus|NodeFixedYawAxis|NodeID|NodeLookAt|NodePitch|NodeRoll|NodeX|NodeY|NodeYaw|NodeZ)\>"
+color brightyellow "\<(NormalX|NormalY|NormalZ|NormalizeMesh|OSVersion|OnErrorCall|OnErrorDefault|OnErrorExit|OnErrorGoto|OpenConsole|OpenCryptRandom|OpenDatabase|OpenDatabaseRequester|OpenFTP|OpenFile|OpenFileRequester|OpenGLGadget|OpenGadgetList|OpenGadgetList3D|OpenHelp)\>"
+color brightyellow "\<(OpenLibrary|OpenNetworkConnection|OpenPack|OpenPreferences|OpenScreen|OpenSerialPort|OpenSubMenu|OpenWindow|OpenWindow3D|OpenWindowedScreen|OpenXMLDialog|OptionGadget|OptionGadget3D|OutputDepth|OutputHeight|OutputWidth|PackEntryName|PackEntrySize|PackEntryType|PanelGadget)\>"
+color brightyellow "\<(PanelGadget3D|ParentXMLNode|Parse3DScripts|ParseDate|ParseJSON|ParseXML|ParticleAcceleration|ParticleAngle|ParticleColorFader|ParticleColorRange|ParticleEmissionRate|ParticleEmitterAngle|ParticleEmitterDirection|ParticleEmitterID|ParticleEmitterX|ParticleEmitterY|ParticleEmitterZ|ParticleMaterial|ParticleScaleRate|ParticleSize)\>"
+color brightyellow "\<(ParticleSpeedFactor|ParticleTimeToLive|ParticleVelocity|PathBoundsHeight|PathBoundsWidth|PathBoundsX|PathBoundsY|PathCursorX|PathCursorY|PathLength|PathPointAngle|PathPointX|PathPointY|PathRequester|PathSegments|PauseAudioCD|PauseMovie|PauseSound|PauseThread|PdfVectorOutput)\>"
+color brightyellow "\<(PeekA|PeekB|PeekC|PeekD|PeekF|PeekI|PeekL|PeekQ|PeekS|PeekU|PeekW|PickX|PickY|PickZ|Pitch|PlayAudioCD|PlayMovie|PlayMusic|PlaySound|PlaySound3D)\>"
+color brightyellow "\<(Plot|Point|PointJoint|PointPick|PokeA|PokeB|PokeC|PokeD|PokeF|PokeI|PokeL|PokeQ|PokeS|PokeU|PokeW|PopListPosition|PopMapPosition|PostEvent|Pow|PreferenceComment)\>"
+color brightyellow "\<(PreferenceGroup|PreferenceGroupName|PreferenceKeyName|PreferenceKeyValue|PreviousDatabaseRow|PreviousElement|PreviousXMLNode|Print|PrintN|PrintRequester|PrinterOutput|PrinterPageHeight|PrinterPageWidth|PrinterVectorOutput|ProgramExitCode|ProgramFilename|ProgramID|ProgramParameter|ProgramRunning|ProgressBarGadget)\>"
+color brightyellow "\<(ProgressBarGadget3D|PurifierGranularity|PushListPosition|PushMapPosition|RGB|RGBA|RSet|RTrim|Radian|RaiseError|Random|RandomData|RandomSeed|RandomizeArray|RandomizeList|RawKey|RayCast|RayCollide|RayPick|ReAllocateMemory)\>"
+color brightyellow "\<(ReadAsciiCharacter|ReadByte|ReadCGI|ReadCharacter|ReadConsoleData|ReadData|ReadDouble|ReadFile|ReadFloat|ReadInteger|ReadLong|ReadPreferenceDouble|ReadPreferenceFloat|ReadPreferenceInteger|ReadPreferenceLong|ReadPreferenceQuad|ReadPreferenceString|ReadProgramData|ReadProgramError|ReadProgramString)\>"
+color brightyellow "\<(ReadQuad|ReadSerialPortData|ReadString|ReadStringFormat|ReadUnicodeCharacter|ReadWord|ReceiveFTPFile|ReceiveHTTPFile|ReceiveHTTPMemory|ReceiveNetworkData|Red|RefreshDialog|RegisterFontFile|RegularExpressionError|RegularExpressionGroup|RegularExpressionGroupLength|RegularExpressionGroupPosition|RegularExpressionMatchLength|RegularExpressionMatchPosition|RegularExpressionMatchString)\>"
+color brightyellow "\<(RegularExpressionNamedGroup|RegularExpressionNamedGroupLength|RegularExpressionNamedGroupPosition|ReleaseMouse|ReloadMaterial|RemoveBillboard|RemoveEnvironmentVariable|RemoveGadgetColumn|RemoveGadgetItem|RemoveGadgetItem3D|RemoveImageFrame|RemoveJSONElement|RemoveJSONMember|RemoveKeyboardShortcut|RemoveMailRecipient|RemoveMaterialLayer|RemovePreferenceGroup|RemovePreferenceKey|RemoveString|RemoveSysTrayIcon)\>"
+color brightyellow "\<(RemoveWindowTimer|RemoveXMLAttribute|RenameFTPFile|RenameFile|RenderWorld|ReplaceRegularExpression|ReplaceString|ResetCoordinates|ResetGradientColors|ResetList|ResetMap|ResetMaterial|ResetPath|ResetProfiler|ResizeBillboard|ResizeCamera|ResizeGadget|ResizeGadget3D|ResizeImage|ResizeJSONElements)\>"
+color brightyellow "\<(ResizeMovie|ResizeParticleEmitter|ResizeWindow|ResizeWindow3D|ResolveXMLAttributeName|ResolveXMLNodeName|RestoreVectorState|ResumeAudioCD|ResumeMovie|ResumeSound|ResumeThread|ReverseString|RibbonEffectColor|RibbonEffectWidth|Right|Roll|RootXMLNode|RotateBillboardGroup|RotateCamera|RotateCoordinates)\>"
+color brightyellow "\<(RotateEntity|RotateEntityBone|RotateLight|RotateMaterial|RotateNode|RotateSprite|Round|RoundBox|RunProgram|SaveDebugOutput|SaveFileRequester|SaveImage|SaveJSON|SaveMesh|SaveRenderTexture|SaveSprite|SaveTerrain|SaveVectorState|SaveXML|ScaleCoordinates)\>"
+color brightyellow "\<(ScaleEntity|ScaleMaterial|ScaleNode|ScaleText3D|ScintillaGadget|ScintillaSendMessage|ScreenDepth|ScreenHeight|ScreenID|ScreenModeDepth|ScreenModeHeight|ScreenModeRefreshRate|ScreenModeWidth|ScreenOutput|ScreenWidth|ScrollAreaGadget|ScrollAreaGadget3D|ScrollBarGadget|ScrollBarGadget3D|ScrollMaterial)\>"
+color brightyellow "\<(Second|SecondWorldCollisionEntity|SelectElement|SelectedFilePattern|SelectedFontColor|SelectedFontName|SelectedFontSize|SelectedFontStyle|SendFTPFile|SendMail|SendNetworkData|SendNetworkString|SerialPortError|SerialPortID|SerialPortTimeouts|ServerID|SetActiveGadget|SetActiveGadget3D|SetActiveWindow|SetActiveWindow3D)\>"
+color brightyellow "\<(SetClipboardImage|SetClipboardText|SetCurrentDirectory|SetDatabaseBlob|SetDatabaseDouble|SetDatabaseFloat|SetDatabaseLong|SetDatabaseNull|SetDatabaseQuad|SetDatabaseString|SetDragCallback|SetDropCallback|SetEntityAnimationLength|SetEntityAnimationTime|SetEntityAnimationWeight|SetEntityAttribute|SetEntityCollisionFilter|SetEntityMaterial|SetEnvironmentVariable|SetFTPDirectory)\>"
+color brightyellow "\<(SetFileAttributes|SetFileDate|SetFrameRate|SetGUITheme3D|SetGadgetAttribute|SetGadgetAttribute3D|SetGadgetColor|SetGadgetData|SetGadgetData3D|SetGadgetFont|SetGadgetItemAttribute|SetGadgetItemColor|SetGadgetItemData|SetGadgetItemData3D|SetGadgetItemImage|SetGadgetItemState|SetGadgetItemState3D|SetGadgetItemText|SetGadgetItemText3D|SetGadgetState)\>"
+color brightyellow "\<(SetGadgetState3D|SetGadgetText|SetGadgetText3D|SetImageFrame|SetImageFrameDelay|SetJSONArray|SetJSONBoolean|SetJSONDouble|SetJSONFloat|SetJSONInteger|SetJSONNull|SetJSONObject|SetJSONQuad|SetJSONString|SetJointAttribute|SetLightColor|SetMailAttribute|SetMailBody|SetMaterialAttribute|SetMaterialColor)\>"
+color brightyellow "\<(SetMenuItemState|SetMenuItemText|SetMenuTitleText|SetMeshData|SetMeshMaterial|SetMusicPosition|SetNodeAnimationKeyFramePosition|SetNodeAnimationKeyFrameRotation|SetNodeAnimationKeyFrameScale|SetNodeAnimationLength|SetNodeAnimationTime|SetNodeAnimationWeight|SetOrientation|SetOrigin|SetRenderQueue|SetRuntimeDouble|SetRuntimeInteger|SetRuntimeString|SetSerialPortStatus|SetSoundFrequency)\>"
+color brightyellow "\<(SetSoundPosition|SetTerrainTileHeightAtPoint|SetTerrainTileLayerBlend|SetToolBarButtonState|SetURLPart|SetVehicleAttribute|SetWindowCallback|SetWindowColor|SetWindowData|SetWindowState|SetWindowTitle|SetWindowTitle3D|SetXMLAttribute|SetXMLEncoding|SetXMLNodeName|SetXMLNodeOffset|SetXMLNodeText|SetXMLStandalone|SetupTerrains|ShortcutGadget)\>"
+color brightyellow "\<(ShowAssemblyViewer|ShowCallstack|ShowDebugOutput|ShowGUI|ShowLibraryViewer|ShowMemoryViewer|ShowProfiler|ShowVariableViewer|ShowWatchlist|Sign|SignalSemaphore|Sin|SinH|SkewCoordinates|SkyBox|SkyDome|SliderJoint|SmartWindowRefresh|SortArray|SortList)\>"
+color brightyellow "\<(SortStructuredArray|SortStructuredList|SoundCone3D|SoundID3D|SoundLength|SoundListenerLocate|SoundPan|SoundRange3D|SoundStatus|SoundVolume|SoundVolume3D|Space|SpinGadget|SpinGadget3D|SplinePointX|SplinePointY|SplinePointZ|SplineX|SplineY|SplineZ)\>"
+color brightyellow "\<(SplitList|SplitterGadget|SpotLightRange|SpriteBlendingMode|SpriteCollision|SpriteDepth|SpriteHeight|SpriteID|SpriteOutput|SpritePixelCollision|SpriteQuality|SpriteWidth|Sqr|StartAESCipher|StartDrawing|StartEntityAnimation|StartFingerprint|StartNodeAnimation|StartPrinting|StartProfiler)\>"
+color brightyellow "\<(StartVectorDrawing|StatusBarHeight|StatusBarID|StatusBarImage|StatusBarProgress|StatusBarText|StickyWindow|StopAudioCD|StopDrawing|StopEntityAnimation|StopMovie|StopMusic|StopNodeAnimation|StopPrinting|StopProfiler|StopSound|StopSound3D|StopVectorDrawing|Str|StrD)\>"
+color brightyellow "\<(StrF|StrU|StringByteLength|StringField|StringFingerprint|StringGadget|StringGadget3D|StrokePath|SubMeshCount|Sun|SvgVectorOutput|SwapElements|SwitchCamera|SysTrayIconToolTip|Tan|TanH|TerrainHeight|TerrainLocate|TerrainMousePick|TerrainRenderMode)\>"
+color brightyellow "\<(TerrainTileHeightAtPosition|TerrainTileLayerMapSize|TerrainTilePointX|TerrainTilePointY|TerrainTileSize|Text3DAlignment|Text3DCaption|Text3DColor|Text3DID|Text3DX|Text3DY|Text3DZ|TextGadget|TextGadget3D|TextHeight|TextWidth|TextureHeight|TextureID|TextureOutput|TextureWidth)\>"
+color brightyellow "\<(ThreadID|ThreadPriority|ToolBarButtonText|ToolBarHeight|ToolBarID|ToolBarImageButton|ToolBarSeparator|ToolBarStandardButton|ToolBarToolTip|TrackBarGadget|TransformMesh|TransformSprite|TranslateCoordinates|TransparentSpriteColor|TreeGadget|Trim|TruncateFile|TryLockMutex|TrySemaphore|UCase)\>"
+color brightyellow "\<(URLDecoder|URLEncoder|UTF8|UnbindEvent|UnbindGadgetEvent|UnbindMenuEvent|UnclipOutput|UncompressMemory|UncompressPackFile|UncompressPackMemory|UnescapeString|UnlockMutex|UpdateEntityAnimation|UpdateMesh|UpdateMeshBoundingBox|UpdateRenderTexture|UpdateSplinePoint|UpdateTerrain|UpdateTerrainTileLayerBlend|UpdateVertexPoseReference)\>"
+color brightyellow "\<(UseAudioCD|UseBriefLZPacker|UseCRC32Fingerprint|UseFLACSoundDecoder|UseGIFImageDecoder|UseGadgetList|UseJPEG2000ImageDecoder|UseJPEG2000ImageEncoder|UseJPEGImageDecoder|UseJPEGImageEncoder|UseJcalg1Packer|UseLzmaPacker|UseMD5Fingerprint|UseMySQLDatabase|UseODBCDatabase|UseOGGSoundDecoder|UsePNGImageDecoder|UsePNGImageEncoder|UsePostgreSQLDatabase|UseSHA1Fingerprint)\>"
+color brightyellow "\<(UseSHA2Fingerprint|UseSHA3Fingerprint|UseSQLiteDatabase|UseTGAImageDecoder|UseTIFFImageDecoder|UseTarPacker|UseZipPacker|UserName|Val|ValD|ValF|VectorFont|VectorOutputHeight|VectorOutputWidth|VectorParagraphHeight|VectorResolutionX|VectorResolutionY|VectorSourceCircularGradient|VectorSourceColor|VectorSourceGradientColor)\>"
+color brightyellow "\<(VectorSourceImage|VectorSourceLinearGradient|VectorTextHeight|VectorTextWidth|VectorUnit|VertexPoseReferenceCount|WaitFastCGIRequest|WaitProgram|WaitSemaphore|WaitThread|WaitWindowEvent|WaterColor|WaterHeight|WebGadget|WebGadgetPath|WindowBounds|WindowEvent|WindowEvent3D|WindowHeight|WindowHeight3D)\>"
+color brightyellow "\<(WindowID|WindowID3D|WindowMouseX|WindowMouseY|WindowOutput|WindowVectorOutput|WindowWidth|WindowWidth3D|WindowX|WindowX3D|WindowY|WindowY3D|WorldCollisionAppliedImpulse|WorldCollisionContact|WorldCollisionNormal|WorldDebug|WorldGravity|WorldShadows|WriteAsciiCharacter|WriteByte)\>"
+color brightyellow "\<(WriteCGIData|WriteCGIFile|WriteCGIHeader|WriteCGIString|WriteCGIStringN|WriteCharacter|WriteConsoleData|WriteData|WriteDouble|WriteFloat|WriteInteger|WriteLong|WritePreferenceDouble|WritePreferenceFloat|WritePreferenceInteger|WritePreferenceLong|WritePreferenceQuad|WritePreferenceString|WriteProgramData|WriteProgramString)\>"
+color brightyellow "\<(WriteProgramStringN|WriteQuad|WriteSerialPortData|WriteSerialPortString|WriteString|WriteStringFormat|WriteStringN|WriteUnicodeCharacter|WriteWord|XMLAttributeName|XMLAttributeValue|XMLChildCount|XMLError|XMLErrorLine|XMLErrorPosition|XMLNodeFromID|XMLNodeFromPath|XMLNodePath|XMLNodeType|XMLStatus)\>"
+
+# Trailing whitespaces
+color ,green "[[:space:]]+$"

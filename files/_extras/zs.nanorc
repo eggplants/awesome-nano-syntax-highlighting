@@ -1,0 +1,30 @@
+# Source: https://github.com/CraftTweaker/zenscript-nanorc/blob/6e93505435d2e8f1fb5f1852ab2713b6e6ac21d9/zs.nanorc
+# License: MIT
+
+syntax "ZenScript" ".*\.zs$"
+comment "/*|*/"
+
+icolor brightblue "\b(([1-9][0-9]+)|0+)\.[0-9]+d*\b" "\b[1-9][0-9]*\b" "\b0[0-7]*\b" "\b0x[1-9a-f][0-9a-f]*\b"
+
+color brightyellow "\\.\\.|\+=|\+|-=|-|\\*=|\*|\\/=|\/|%=|%|\\|=|\||\|\\||&=|&&|&|\\^=|\\^|\\?|:|~=|~|<=|<|>=|>|==|=|!=|!"
+color green ""[^"]*""
+color green "'[^']*'"
+color brightblue  start="<" end=">"
+color yellow "\s*import\s+"
+color yellow "\<(zenClass\s+\w+)\>"
+color yellow "\<(zenConstructor)\>"
+color blue "\btrue\b|\bfalse\b|\bnull\b"
+color yellow "\<(in|has|void|as|version|for|return|while|break|instanceof|if|else)\>"
+color brightyellow "\<(any|bool|byte|short|int|long|float|double|string|void)\>"
+color brightyellow "\.\."
+color yellow ";"
+color yellow "\<(var|val|static|global)\>"
+color yellow "\<(function)\>"
+color blue "\(|\)|\{|\}|\[|\]"
+color brightgreen  start="/\*" end="\*/"
+color brightgreen "//.*"
+color brightgreen "#.*"
+color blue start="^#" end="\>"
+## Trailing spaces
+color ,green "[[:space:]]+$"
+

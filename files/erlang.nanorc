@@ -1,0 +1,20 @@
+# Source: https://github.com/pazmivaniye/nanorc/blob/834ba5d8c14be9921378a2202e263e2ca4f95fdc/erlang.nanorc
+# License: MIT
+
+syntax "erlang" "\.erl$"
+header "^#!.*escript\b"
+comment "%"
+
+# Reserved words.
+color bold,lightwhite "\b(after|and(also)?|b(and|not|or|sl|sr|xor)|begin)\b"
+color bold,lightwhite "\b(case|catch|cond|div|else|end|fun|if|let|maybe|not)\b"
+color bold,lightwhite "\b(of|or(else)?|receive|rem|try|when|xor)\b"
+
+color black,white "[^ -~]"
+
+# Comments.
+color italic,lightblack "%.*"
+
+# Shebangs.
+color bold,lightwhite "^#!.*escript\b.*"
+color ,white "\s+$"

@@ -1,0 +1,78 @@
+# Source: https://github.com/distant-chervony/nano-keyd-syntax-hl/blob/12e3a8ad0be0896c589b5d8dbf5b0b61d05c96f7/keyd.nanorc
+# License: MIT
+
+# Matches all .conf and .ini files, you can choose other matching patterns below
+syntax "keyd" "\.(conf|ini)$"
+# syntax "keyd" "\.conf$"  Matches all .conf files
+# syntax "keyd" "/home/[-_A-Za-z0-9]+/\.config/keyd/.*\.conf$"  Matches every .conf file located under ~/.config/keyd/
+# syntax "keyd" "/etc/keyd/default\.conf$"  Matches the default location of the config file
+
+# Detects header
+header "^\[[^\]]*\]$"
+
+# Flags invalid values or keys
+icolor crimson ".*"
+
+# Include directives and filenames
+icolor sage start="[[:space:]]*include[[:space:]]+" end="$"
+color sky "^[[:space:]]*include[[:space:]]+"
+
+# [ids] section wildcard
+color red "^[[:space:]]*\*"
+
+# Key area (the part to the left of '=')
+# Key-value pairs without spaces around '=' are marked invalid
+# Rules allowing no spaces are included but commented out
+icolor orange "[[:space:]]*.+[[:space:]]="
+# icolor orange "[[:space:]]*[a-zA-Z0-9._-]+[[:space:]]?="
+
+# Values (the part to the right of '=')
+icolor sand start="=[[:space:]]+" end="(#|;|$)"
+# icolor sand start="=[[:space:]]*" end="(#|;|$)"
+
+# Boolean values (not used in keyd)
+color beet start="=[[:space:]]+(true|false)" end="(#|;|$)"
+
+# Parentheses
+color ocher "[[:space:]]*\([^)]*([[:space:]].*)?\)+"
+
+# String values
+color lightyellow "[[:space:]]*(['\"].*['\"])"
+
+# Numeric digits
+color sea "\b[0-9]+(ms|s|us|pt|px)?\b%?"
+
+# Floating-point numbers (not in use in keyd)
+color lagoon "\b[0-9]+\.[0-9]+(ms|s|us|pt|px)?\b%?"
+
+# Function names
+color brick "(overloadt2|overloadt|overloadi|overload|oneshotm|oneshot|layerm|layer|swapm|swap|togglem|toggle|clearm|clear|setlayout|timeout|macro2|macro|command|noop|lettermod)"
+
+# Macro and modifiers
+# Comment out these two lines for better compatibility with other .conf and .ini files
+color lime "\b([A-Z]-[A-Za-z0-9_]+|[A-Za-z0-9_]+(-[A-Za-z0-9_]+)+)\b"
+color lime "\b([A-Za-z0-9_]+(\+[A-Za-z0-9_]+)+)\b"
+
+# Actual device ids
+# Comment out these two lines for better compatibility with other .conf and .ini files
+color yellow "\b[^:[:space:]]+:[^:[:space:]]+(:[^:[:space:]]+)?\b"
+color red "-+[^:[:space:]]+:[^:[:space:]]+(:[^:[:space:]]+)?\b"
+
+# Section headers
+color lime "^[[:space:]]*\[[^]]*\]"
+color teal "^[[:space:]]*\[([A-Za-z0-9]+((:|\+)[A-Za-z0-9]+)+)+\]"
+
+# Global settings, e.g., `macro_timeout = 600`
+# Comment out these two lines for better compatibility with other .conf and .ini files
+color lagoon "^[[:space:]]*\[global\]"
+color lagoon "[[:space:]]*[a-z0-9]+_+[a-z0-9]+.*[[:space:]]+="
+
+# The assignment operator '='
+color red "="
+
+# Comment characters (";" left only for .ini files, keyd uses "#")
+# color latte "(#|;).*"
+color latte "#.*"
+
+# Decoloring punctuation
+color normal ","

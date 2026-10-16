@@ -1,0 +1,11 @@
+# Source: https://github.com/galenguyer/nano-syntax-highlighting/blob/6f7cb16bf238fa5c55995377ec9d1d3fa9b9515f/pkg-config.nanorc
+# License: GPL-3.0-or-later
+
+syntax "PC" "\.pc$"
+
+color cyan  "^(Name|Description|URL|Version|Conflicts|Cflags):"
+color cyan  "^(Requires|Libs)(\.private)?:"
+color red "="
+color brightyellow "\$\{[A-Za-z_][A-Za-z0-9_]*\}"
+color ,green "[[:space:]]+$"
+color ,red "	+ +| +	+"

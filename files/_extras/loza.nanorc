@@ -1,0 +1,52 @@
+# Source: https://github.com/Wsoum/loza-nanorc/blob/1bf35f78b47bd7404914ff8400c8a0ef224eca13/loza.nanorc
+# License: MIT
+
+## Loza syntax highlighting for GNU nano editor
+## Author: Sami Ghasemi - sami2020pro
+
+syntax "Loza" "\.loza$"
+header "^#!.*loza[-0-9._]*"
+comment "#"
+
+## keywords
+color brightblue "\<(ns|namespace|endnamespace|endns|func|endfunc|class)\>"
+color brightblue "\<(endclass|if|else|endif|elif|while|endwhile|try|endtry|end)\>"
+
+## builtin commands
+color brightred "\<(return|goto|gotoif|import|import_once|import_run|import_run_once|raise|mem)\>"
+color brightred "\<(pass|break|continue|and|or|not|in|is|assert|__docstring__|use|section)\>"
+
+## boolean and null
+color brightgreen "\<(true|True||false|False|null|None)\>"
+
+## datatypes
+color green "\<(string|str|int|integer|list|array|bool|float|tuple|dict)\>"
+
+## builtin functions
+color brightyellow "\<(print|println|printl|perror|printf|clone|define|all_defines|undefine|is_defined|redefine)\>"
+color brightyellow "\<(get|gget|set|gset|python|eval|py_load_file|py_load_module|register_shutdown)\>"
+color brightyellow "\<(rmem|typeof|system|__namespace__|match|isset|read|exit|die|var_dump)\>"
+color brightyellow "\<(out_start|out_end|out_clean|out_get|out_get_clean|func.list|func.exists)\>"
+color brightyellow "\<(func.delete|class.list|class.exists|class.delete)\>"
+
+## variables
+color magenta "\$[a-zA-Z_0-9$\.]*"
+
+## modules
+color blue "\@[a-zA-Z_0-9$\.]*"
+
+## command @doc
+color brightred "\@doc*"
+
+## operators
+color brightwhite "(\*|/|%|\+|-|>|<|>>|<<|==|=|'|\"|\(|\))"
+
+## comments
+color brightcyan "#[^{].*$" "#$"
+color brightwhite,yellow "\<(FIXME|TODO)\>"
+
+## strings
+color yellow "'([^'\]|\\.)+'"
+color yellow "\"([^"\]|\\.)+""
+color yellow start="'''([^'),]|$)" end="(^|[^(\])'''"
+color yellow start="\"\"\"([^"),]|$)" end="(^|[^(\])\"\"\""

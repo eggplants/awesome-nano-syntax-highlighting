@@ -1,0 +1,14 @@
+# Source: https://github.com/galenguyer/nano-syntax-highlighting/blob/6f7cb16bf238fa5c55995377ec9d1d3fa9b9515f/dotenv.nanorc
+# License: GPL-3.0-or-later
+
+## Syntax highlight for .env files, eg. https://symfony.com/doc/current/components/dotenv.html
+## 
+## Derived from sh.nanorc
+##
+syntax "dotenv" "\.env$" "^\.env\..+$"
+
+color green "(\(|\)|\$|=)"
+color brightyellow ""(\\.|[^"])*"" "'(\\.|[^'])*'"
+color cyan "(^|[[:space:]])#.*$"
+color brightwhite,yellow "\<(FIXME|TODO|XXX)\>"
+color ,green "[[:space:]]+$"

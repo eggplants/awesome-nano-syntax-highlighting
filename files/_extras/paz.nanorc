@@ -1,0 +1,21 @@
+# Source: https://github.com/pazmivaniye/nanorc/blob/834ba5d8c14be9921378a2202e263e2ca4f95fdc/paz.nanorc
+# License: MIT
+
+syntax "paz" "\.paz$"
+header "^#!.*paz\b"
+comment "#"
+
+# Reserved words.
+color bold,lightwhite "\b(import|extern|namespace|return|class|with|and|or)\b"
+color bold,lightwhite "\b(for|if|while|try|catch|throw|else|true|false|in)\b"
+color bold,lightwhite "\b(local|static|const|auto|self|cast|from)\b"
+
+color black,white "[^ -~]"
+
+# Comments.
+color italic,lightblack "(^|\s)#.*"
+
+# Shebangs.
+color bold,lightwhite "^#!.*paz\b.*"
+
+color ,white "\s+$"
