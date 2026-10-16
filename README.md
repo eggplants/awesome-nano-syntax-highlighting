@@ -15,10 +15,11 @@ A curated collection of [GNU nano syntax highlighting files](https://www.nano-ed
 ## Usage
 
 ```sh
-echo 'include "/path/to/nanorc/files/*.nanorc"' >> ~/.nanorc
+git clone https://github.com/eggplants/awesome-nano-syntax-highlighting ~/.local/share/nano-highlight --depth 1 --single-branch
+echo 'include "~/.local/share/nano-highlight/files/*.nanorc"' >> ~/.nanorc
 
 # optional
-echo 'include "/path/to/nanorc/files/_extras/*.nanorc"' >> ~/.nanorc
+echo 'include "~/.local/share/nano-highlight/files/_extras/*.nanorc"' >> ~/.nanorc
 ```
 
 ## Lists
