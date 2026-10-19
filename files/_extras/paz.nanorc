@@ -1,4 +1,4 @@
-# Source: https://github.com/pazmivaniye/nanorc/blob/834ba5d8c14be9921378a2202e263e2ca4f95fdc/paz.nanorc
+# Source: https://github.com/pazmivaniye/nanorc/blob/ff8e37d2e833e1adce0edd690f57783dca97f8b0/paz.nanorc
 # License: MIT
 
 syntax "paz" "\.paz$"

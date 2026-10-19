@@ -1,4 +1,4 @@
-# Source: https://github.com/gerph/nano-colour/blob/87f06fba4a1f713b534524fec231b74850cb4a57/examples/codeowners.nanorc
+# Source: https://github.com/gerph/nano-colour/blob/5439fcc133f9b34ca3ad785717ab6aefcf216ca1/examples/codeowners.nanorc
 # License: MIT
 
 syntax "codeowners" "CODEOWNERS$"
